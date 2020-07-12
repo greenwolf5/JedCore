@@ -418,13 +418,13 @@ public class WaterGimbal extends WaterAbility implements AddonAbility, ComboAbil
 		combination.add(new AbilityInformation("Torrent", ClickType.SHIFT_UP));
 		combination.add(new AbilityInformation("Torrent", ClickType.SHIFT_DOWN));
 		combination.add(new AbilityInformation("Torrent", ClickType.SHIFT_UP));
-		combination.add(new AbilityInformation("OctopusForm", ClickType.SHIFT_DOWN));
+		combination.add(new AbilityInformation("WaterManipulation", ClickType.SHIFT_DOWN));
 		return combination;
 	}
 
 	@Override
 	public String getInstructions() {
-		return "Torrent (Tap Shift) > Torrent (Tap Shift) > OctopusForm (Hold Shift) > OctopusForm (Left Click Multiple times)";
+		return "Torrent (Tap Shift) > Torrent (Tap Shift) > WaterManipulation (Hold Shift) > WaterManipulation (Left-click multiple times)";
 	}
 
 	@Override

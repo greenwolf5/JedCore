@@ -15,7 +15,7 @@ import com.projectkorra.projectkorra.ability.util.ComboManager.AbilityInformatio
 import com.projectkorra.projectkorra.util.BlockSource;
 import com.projectkorra.projectkorra.util.ClickType;
 import com.projectkorra.projectkorra.util.TempBlock;
-import com.projectkorra.projectkorra.waterbending.OctopusForm;
+import com.projectkorra.projectkorra.waterbending.WaterManipulation;
 import com.projectkorra.projectkorra.waterbending.Torrent;
 
 import com.projectkorra.projectkorra.waterbending.ice.PhaseChange;
@@ -94,8 +94,8 @@ public class WaterGimbal extends WaterAbility implements AddonAbility, ComboAbil
 			if (hasAbility(player, Torrent.class)) {
 				((Torrent) getAbility(player, Torrent.class)).remove();
 			}
-			if (hasAbility(player, OctopusForm.class)) {
-				((OctopusForm) getAbility(player, OctopusForm.class)).remove();
+			if (hasAbility(player, WaterManipulation.class)) {
+				((WaterManipulation) getAbility(player, WaterManipulation.class)).remove();
 			}
 		}
 	}
@@ -125,12 +125,12 @@ public class WaterGimbal extends WaterAbility implements AddonAbility, ComboAbil
 			remove();
 			return;
 		}
-		if (!bPlayer.canBendIgnoreBinds(this) || !bPlayer.canBendIgnoreCooldowns(getAbility("OctopusForm"))) {
+		if (!bPlayer.canBendIgnoreBinds(this) || !bPlayer.canBendIgnoreCooldowns(getAbility("WaterManipulation"))) {
 			remove();
 			return;
 		}
-		if (hasAbility(player, OctopusForm.class)) {
-			((OctopusForm) getAbility(player, OctopusForm.class)).remove();
+		if (hasAbility(player, WaterManipulation.class)) {
+			((WaterManipulation) getAbility(player, WaterManipulation.class)).remove();
 		}
 		if (leftconsumed && rightconsumed) {
 			remove();
@@ -235,8 +235,8 @@ public class WaterGimbal extends WaterAbility implements AddonAbility, ComboAbil
 	public static void prepareBlast(Player player) {
 		if (hasAbility(player, WaterGimbal.class)) {
 			((WaterGimbal) getAbility(player, WaterGimbal.class)).prepareBlast();
-			if (hasAbility(player, OctopusForm.class)) {
-				((OctopusForm) getAbility(player, OctopusForm.class)).remove();
+			if (hasAbility(player, WaterManipulation.class)) {
+				((WaterManipulation) getAbility(player, WaterManipulation.class)).remove();
 			}
 		}
 	}

@@ -238,7 +238,7 @@ public class Maelstrom extends WaterAbility implements AddonAbility, ComboAbilit
 	@Override
 	public ArrayList<AbilityInformation> getCombination() {
 		ArrayList<AbilityInformation> combination = new ArrayList<>();
-		combination.add(new AbilityInformation("WaterBubble", ClickType.SHIFT_DOWN));
+		combination.add(new AbilityInformation("PhaseChange", ClickType.SHIFT_DOWN));
 		combination.add(new AbilityInformation("Torrent", ClickType.LEFT_CLICK));
 		combination.add(new AbilityInformation("Torrent", ClickType.LEFT_CLICK));
 		return combination;
@@ -246,7 +246,7 @@ public class Maelstrom extends WaterAbility implements AddonAbility, ComboAbilit
 
 	@Override
 	public String getInstructions() {
-		return "WaterBubble (Hold Shift) > Torrent (Left Click) > Torrent (Left Click)";
+		return "PhaseChange (Hold Shift) > Torrent (Left Click) > Torrent (Left Click)";
 	}
 
 	@Override

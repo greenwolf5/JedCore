@@ -275,14 +275,13 @@ public class AbilityListener implements Listener {
 				if (abil.equalsIgnoreCase("drain")) {
 					Drain.fireBlast(player);
 				}
-				if (abil.equalsIgnoreCase("octopusform")) {
+				if (abil.equalsIgnoreCase("watermanipulation")) {
 					WaterGimbal.prepareBlast(player);
 				}
 				if (abil.equalsIgnoreCase("watermanipulation")) {
 					WaterFlow.freeze(player);
 				}
 			}
-			
 			if (coreAbil instanceof ChiAbility && bPlayer.isElementToggled(Element.CHI) == true) {
 				if (GeneralMethods.isWeapon(player.getInventory().getItemInMainHand().getType()) && !ProjectKorra.plugin.getConfig().getBoolean("Properties.Chi.CanBendWithWeapons")) {
 					return;

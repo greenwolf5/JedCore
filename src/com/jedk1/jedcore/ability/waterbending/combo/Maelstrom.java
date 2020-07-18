@@ -207,7 +207,7 @@ public class Maelstrom extends WaterAbility implements AddonAbility, ComboAbilit
 
 	@Override
 	public boolean isHiddenAbility() {
-		return true;
+		return false;
 	}
 
 	@Override

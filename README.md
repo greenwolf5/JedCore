@@ -1,8 +1,14 @@
 # JedCore
-This is my fork of jedk1's JedCore addon for ProjectKorra.  
-Download releases [here](https://github.com/plushmonkey/JedCore/releases).  
+This is my fork of plushmonkey's fork of jedk1's JedCore addon for ProjectKorra.  
+Download releases [here](https://github.com/Aztlon/JedCore/releases).  
 
 ## Changelog
+
+### 2.9.5-alpha.1
+- Added Blue Fire support for all fire abilities
+- Changed WaterGimbal combo abilities to Torrent > Torrent > WaterManipulation
+- Changed Maelstrom combo abilities to PhaseChange > Torrent > Torrent
+
 ### 2.9.3
 - Fix a crash with Bloodpuppet and Bloodbending when IgnoreWalls is enabled.
   

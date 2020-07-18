@@ -20,6 +20,7 @@ import org.bukkit.util.Vector;
 
 import com.jedk1.jedcore.JedCore;
 import com.projectkorra.projectkorra.Element;
+import com.projectkorra.projectkorra.Element.SubElement;
 import com.projectkorra.projectkorra.GeneralMethods;
 import com.projectkorra.projectkorra.ability.AddonAbility;
 import com.projectkorra.projectkorra.ability.FireAbility;
@@ -203,8 +204,12 @@ public class FireBreath extends FireAbility implements AddonAbility {
 				}
 
 			} else {
+				if (bPlayer.canUseSubElement(SubElement.BLUE_FIRE)) {
+					ParticleEffect.SOUL_FIRE_FLAME.display(loc, particles, Math.random(), Math.random(), Math.random(), size);
+				} else {
+					ParticleEffect.FLAME.display(loc, particles, Math.random(), Math.random(), Math.random(), size);
+				}
 				ParticleEffect.SMOKE_NORMAL.display(loc, particles, Math.random(), Math.random(), Math.random(), size);
-				ParticleEffect.FLAME.display(loc, particles, Math.random(), Math.random(), Math.random(), size);
 			}
 		}
 	}

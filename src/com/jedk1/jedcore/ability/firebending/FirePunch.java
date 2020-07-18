@@ -16,6 +16,7 @@ import org.bukkit.util.Vector;
 
 import com.jedk1.jedcore.JedCore;
 import com.projectkorra.projectkorra.BendingPlayer;
+import com.projectkorra.projectkorra.Element.SubElement;
 import com.projectkorra.projectkorra.GeneralMethods;
 import com.projectkorra.projectkorra.ability.AddonAbility;
 import com.projectkorra.projectkorra.ability.FireAbility;
@@ -49,7 +50,12 @@ public class FirePunch extends FireAbility implements AddonAbility {
 		Location offset = GeneralMethods.getRightSide(player.getLocation(), .55).add(0, 1.2, 0);
 		Vector dir = player.getEyeLocation().getDirection();
 		Location righthand = offset.toVector().add(dir.clone().multiply(.8D)).toLocation(player.getWorld());
-		ParticleEffect.FLAME.display(righthand, 3, 0, 0, 0, 0);
+		BendingPlayer bPlayer = BendingPlayer.getBendingPlayer(player);
+		if (bPlayer.canUseSubElement(SubElement.BLUE_FIRE)) {
+			ParticleEffect.SOUL_FIRE_FLAME.display(righthand, 3, 0, 0, 0, 0);
+		} else {
+			ParticleEffect.FLAME.display(righthand, 3, 0, 0, 0, 0);
+		}
 		ParticleEffect.SMOKE_NORMAL.display(righthand, 3, 0, 0, 0, 0);
 	}
 
@@ -62,7 +68,7 @@ public class FirePunch extends FireAbility implements AddonAbility {
 		if (bPlayer.canBend(getAbility("FirePunch")) && getRecent().contains(player.getUniqueId())) {
 			bPlayer.addCooldown(getAbility("FirePunch"), getStaticCooldown(player.getWorld()));
 			getRecent().remove(player.getUniqueId());
-			playFirebendingParticles(target.getLocation().add(0, 1, 0), 1, 0f, 0f, 0f);
+			// playFirebendingParticles(target.getLocation().add(0, 1, 0), 1, 0f, 0f, 0f);
 			DamageAbility da = new DamageAbility(player);
 			da.remove();
 			DamageHandler.damageEntity(target, getDamage(target.getWorld()), da);

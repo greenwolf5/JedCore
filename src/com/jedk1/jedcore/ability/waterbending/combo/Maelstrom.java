@@ -67,6 +67,15 @@ public class Maelstrom extends WaterAbility implements AddonAbility, ComboAbilit
 		range = config.getInt("Abilities.Water.WaterCombo.Maelstrom.Range");
 		canRemove = true;
 		start = System.currentTimeMillis();
+		
+		applyModifiers();
+	}
+	
+	private void applyModifiers() {
+		if (isNight(player.getWorld())) {
+			cooldown -= ((long) getNightFactor(cooldown) - cooldown);
+			range = (int) getNightFactor(range);
+		}
 	}
 
 	public boolean setOrigin() {

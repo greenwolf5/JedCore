@@ -56,6 +56,15 @@ public class WakeFishing extends WaterAbility implements AddonAbility {
 		cooldown = config.getLong("Abilities.Water.WakeFishing.Cooldown");
 		duration = config.getLong("Abilities.Water.WakeFishing.Duration");
 		range = config.getLong("Abilities.Water.WakeFishing.Range");
+		
+		applyModifiers();
+	}
+	
+	private void applyModifiers() {
+		if (isNight(player.getWorld())) {
+			cooldown -= ((long) getNightFactor(cooldown) - cooldown);
+			range = (long) getNightFactor(range);
+		}
 	}
 
 	@SuppressWarnings("deprecation")

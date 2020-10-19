@@ -370,7 +370,6 @@ public class IceWall extends IceAbility implements AddonAbility {
 		}
 	}
 
-	@SuppressWarnings("deprecation")
 	public static void progressAll() {
 		/*
 		for (IceWall iw : IceWall.instances) {

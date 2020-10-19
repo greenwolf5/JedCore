@@ -23,6 +23,7 @@ import com.projectkorra.projectkorra.Element.SubElement;
 import com.projectkorra.projectkorra.GeneralMethods;
 import com.projectkorra.projectkorra.ability.Ability;
 import com.projectkorra.projectkorra.ability.AddonAbility;
+import com.projectkorra.projectkorra.ability.BlueFireAbility;
 import com.projectkorra.projectkorra.ability.FireAbility;
 import com.projectkorra.projectkorra.util.DamageHandler;
 import com.projectkorra.projectkorra.util.ParticleEffect;
@@ -63,6 +64,22 @@ public class FireShots extends FireAbility implements AddonAbility {
 		range = config.getInt("Abilities.Fire.FireShots.Range");
 		damage = config.getDouble("Abilities.Fire.FireShots.Damage");
 		collisionRadius = config.getDouble("Abilities.Fire.FireShots.CollisionRadius");
+		
+		applyModifiers();
+	}
+	
+	private void applyModifiers() {
+		if (bPlayer.canUseSubElement(SubElement.BLUE_FIRE)) {
+			cooldown *= BlueFireAbility.getCooldownFactor();
+			range *= BlueFireAbility.getRangeFactor();
+			damage *= BlueFireAbility.getDamageFactor();
+		}
+		
+		if (isDay(player.getWorld())) {
+			cooldown -= ((long) getDayFactor(cooldown) - cooldown);
+			range = (int) getDayFactor(range);
+			damage = getDayFactor(damage);
+		}
 	}
 	
 	public class FireShot {

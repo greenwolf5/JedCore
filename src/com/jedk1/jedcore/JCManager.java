@@ -1,7 +1,6 @@
  package com.jedk1.jedcore;
 
 import com.jedk1.jedcore.ability.firebending.FirePunch;
-import com.jedk1.jedcore.ability.firebending.FireShots;
 import com.jedk1.jedcore.ability.firebending.LightningBurst;
 import com.jedk1.jedcore.ability.waterbending.HealingWaters;
 import com.jedk1.jedcore.ability.waterbending.IcePassive;

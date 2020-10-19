@@ -23,6 +23,7 @@ import com.projectkorra.projectkorra.Element;
 import com.projectkorra.projectkorra.Element.SubElement;
 import com.projectkorra.projectkorra.GeneralMethods;
 import com.projectkorra.projectkorra.ability.AddonAbility;
+import com.projectkorra.projectkorra.ability.BlueFireAbility;
 import com.projectkorra.projectkorra.ability.FireAbility;
 import com.projectkorra.projectkorra.firebending.BlazeArc;
 import com.projectkorra.projectkorra.util.DamageHandler;
@@ -92,6 +93,24 @@ public class FireBreath extends FireAbility implements AddonAbility {
 		bindMsg = config.getString("Abilities.Fire.FireBreath.RainbowBreath.EnabledMessage");
 		unbindMsg = config.getString("Abilities.Fire.FireBreath.RainbowBreath.DisabledMessage");
 		deniedMsg = config.getString("Abilities.Fire.FireBreath.RainbowBreath.NoAccess");
+		
+		applyModifiers();
+	}
+	
+	private void applyModifiers() {
+		if (bPlayer.canUseSubElement(SubElement.BLUE_FIRE)) {
+			cooldown *= BlueFireAbility.getCooldownFactor();
+			range *= BlueFireAbility.getRangeFactor();
+			playerDamage *= BlueFireAbility.getDamageFactor();
+			mobDamage *= BlueFireAbility.getDamageFactor();
+		}
+		
+		if (isDay(player.getWorld())) {
+			cooldown -= ((long) getDayFactor(cooldown) - cooldown);
+			range = (int) getDayFactor(range);
+			playerDamage = getDayFactor(playerDamage);
+			mobDamage = getDayFactor(mobDamage);
+		}
 	}
 
 	@Override

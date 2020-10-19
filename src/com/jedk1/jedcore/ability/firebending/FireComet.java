@@ -8,6 +8,7 @@ import com.jedk1.jedcore.util.TempFallingBlock;
 import com.projectkorra.projectkorra.Element.SubElement;
 import com.projectkorra.projectkorra.GeneralMethods;
 import com.projectkorra.projectkorra.ability.AddonAbility;
+import com.projectkorra.projectkorra.ability.BlueFireAbility;
 import com.projectkorra.projectkorra.ability.FireAbility;
 import com.projectkorra.projectkorra.util.DamageHandler;
 import com.projectkorra.projectkorra.util.ParticleEffect;
@@ -90,6 +91,22 @@ public class FireComet extends FireAbility implements AddonAbility {
 		cometOnly = config.getBoolean("Abilities.Fire.FireComet.SozinsCometOnly");
 		avatarBypass = config.getBoolean("Abilities.Fire.FireComet.AvatarStateBypassComet");
 		time = System.currentTimeMillis();
+		
+		applyModifiers();
+	}
+	
+	private void applyModifiers() {
+		if (bPlayer.canUseSubElement(SubElement.BLUE_FIRE)) {
+			cooldown *= BlueFireAbility.getCooldownFactor();
+			damage *= BlueFireAbility.getDamageFactor();
+			range *= BlueFireAbility.getRangeFactor();
+		}
+		
+		if (isDay(player.getWorld())) {
+			cooldown -= ((long) getDayFactor(cooldown) - cooldown);
+			damage = getDayFactor(damage);
+			range = (int) getDayFactor(range);
+		}
 	}
 
 	@Override

@@ -40,10 +40,15 @@ public class FrostBreath extends IceAbility implements AddonAbility {
 	private static final List<Biome> INVALID_BIOMES = Arrays.asList(
 			Biome.DESERT,
 			Biome.DESERT_HILLS,
-			Biome.NETHER,
+			Biome.BASALT_DELTAS,
+			Biome.CRIMSON_FOREST,
+			Biome.NETHER_WASTES,
+			Biome.SOUL_SAND_VALLEY,
+			Biome.WARPED_FOREST,
 			Biome.BADLANDS,
 			Biome.BADLANDS_PLATEAU,
 			Biome.ERODED_BADLANDS,
+			Biome.WOODED_BADLANDS_PLATEAU,
 			Biome.SAVANNA,
 			Biome.SAVANNA_PLATEAU
 	);
@@ -63,8 +68,7 @@ public class FrostBreath extends IceAbility implements AddonAbility {
 		this.config = new Config(player);
 		this.state = new BeamState();
 
-		Location temp = player.getLocation();
-		Biome biome = temp.getWorld().getBiome(temp.getBlockX(), temp.getBlockZ());
+		Biome biome = player.getLocation().getBlock().getBiome();
 
 		if (config.restrictBiomes && INVALID_BIOMES.contains(biome)) {
 			return;

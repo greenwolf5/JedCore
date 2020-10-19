@@ -155,9 +155,17 @@ public class WaterFlow extends WaterAbility implements AddonAbility, ComboAbilit
 		avatarSize = config.getInt("Abilities.Water.WaterCombo.WaterFlow.Size.AvatarState");
 		fullmoonSizeSmall = config.getInt("Abilities.Water.WaterCombo.WaterFlow.Size.FullmoonSmall");
 		fullmoonSizeLarge = config.getInt("Abilities.Water.WaterCombo.WaterFlow.Size.FullmoonLarge");
+		
+		applyModifiers();
 	}
 
-	@SuppressWarnings("deprecation")
+	private void applyModifiers() {
+		if (isNight(player.getWorld())) {
+			maxrange = (int) getNightFactor(maxrange);
+			cooldown -= ((long) getNightFactor(cooldown) - cooldown);
+		}
+	}
+	
 	public static List<Block> getNearbySources(Block block, int searchrange) {
 		List<Block> sources = new ArrayList<Block>();
 		for (Location l : GeneralMethods.getCircle(block.getLocation(), searchrange, 2, false, false, -1)) {

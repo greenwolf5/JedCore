@@ -4,6 +4,7 @@ import com.jedk1.jedcore.JedCore;
 import com.jedk1.jedcore.configuration.JedCoreConfig;
 import com.projectkorra.projectkorra.Element;
 import com.projectkorra.projectkorra.GeneralMethods;
+import com.projectkorra.projectkorra.Element.SubElement;
 import com.projectkorra.projectkorra.ability.AddonAbility;
 import com.projectkorra.projectkorra.ability.AvatarAbility;
 import com.projectkorra.projectkorra.ability.MultiAbility;
@@ -245,7 +246,11 @@ public class ElementSphere extends AvatarAbility implements AddonAbility, MultiA
 				double z = 2 * Math.sin(angle + point);
 				Location loc = location.clone();
 				loc.add(x, 2, z);
-				ParticleEffect.FLAME.display(loc, 0, 0, 0, 0, 1);
+				if (bPlayer.hasSubElement(SubElement.BLUE_FIRE)) {
+					ParticleEffect.SOUL_FIRE_FLAME.display(loc, 0, 0, 0, 0, 1);
+				} else {
+					ParticleEffect.FLAME.display(loc, 0, 0, 0, 0, 1);
+				}
 			}
 
 		point++;

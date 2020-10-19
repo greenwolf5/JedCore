@@ -58,7 +58,6 @@ public class AirGlide extends AirAbility implements AddonAbility {
 		requireGround = config.getBoolean("Abilities.Air.AirGlide.RequireGround") && cooldown > 0;
 	}
 	
-	@SuppressWarnings("deprecation")
 	public void progress() {
 		long time = System.currentTimeMillis();
 

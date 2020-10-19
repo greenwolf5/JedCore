@@ -19,6 +19,7 @@ import com.jedk1.jedcore.JedCore;
 import com.projectkorra.projectkorra.Element.SubElement;
 import com.projectkorra.projectkorra.GeneralMethods;
 import com.projectkorra.projectkorra.ability.AddonAbility;
+import com.projectkorra.projectkorra.ability.BlueFireAbility;
 import com.projectkorra.projectkorra.ability.FireAbility;
 import com.projectkorra.projectkorra.firebending.BlazeArc;
 import com.projectkorra.projectkorra.firebending.util.FireDamageTimer;
@@ -63,6 +64,22 @@ public class FireBall extends FireAbility implements AddonAbility {
 		controllable = config.getBoolean("Abilities.Fire.FireBall.Controllable");
 		fireTrail = config.getBoolean("Abilities.Fire.FireBall.FireTrail");
 		collisionRadius = config.getDouble("Abilities.Fire.FireBall.CollisionRadius");
+		
+		applyModifiers();
+	}
+	
+	private void applyModifiers() {
+		if (bPlayer.canUseSubElement(SubElement.BLUE_FIRE)) {
+			range *= BlueFireAbility.getRangeFactor();
+			cooldown *= BlueFireAbility.getCooldownFactor();
+			damage *= BlueFireAbility.getDamageFactor();
+		}
+		
+		if (isDay(player.getWorld())) {
+			range = (long) getDayFactor(range);
+			cooldown -= ((long) getDayFactor(cooldown) - cooldown);
+			damage = getDayFactor(damage);
+		}
 	}
 	
 	@Override

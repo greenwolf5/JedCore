@@ -143,7 +143,6 @@ public class SandBlast extends SandAbility implements AddonAbility {
 		}
 	}
 
-	@SuppressWarnings("deprecation")
 	private void blastSand() {
 		if (!blasting) {
 			blasting = true;

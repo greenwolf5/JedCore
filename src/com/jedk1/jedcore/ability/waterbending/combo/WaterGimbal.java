@@ -116,8 +116,15 @@ public class WaterGimbal extends WaterAbility implements AddonAbility, ComboAbil
 		canUseBottle = config.getBoolean("Abilities.Water.WaterCombo.WaterGimbal.BottleSource");
 		abilityCollisionRadius = config.getDouble("Abilities.Water.WaterCombo.WaterGimbal.AbilityCollisionRadius");
 		entityCollisionRadius = config.getDouble("Abilities.Water.WaterCombo.WaterGimbal.EntityCollisionRadius");
+		
+		applyModifiers();
 	}
 
+	private void applyModifiers() {
+		cooldown -= ((long) getNightFactor(cooldown) - cooldown);
+		range = getNightFactor(range);
+		damage = getNightFactor(damage);
+	}
 
 	@Override
 	public void progress() {

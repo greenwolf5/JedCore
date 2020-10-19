@@ -3,8 +3,10 @@ package com.jedk1.jedcore.ability.avatar.elementsphere;
 import com.jedk1.jedcore.JedCore;
 import com.jedk1.jedcore.configuration.JedCoreConfig;
 import com.projectkorra.projectkorra.GeneralMethods;
+import com.projectkorra.projectkorra.Element.SubElement;
 import com.projectkorra.projectkorra.ability.AddonAbility;
 import com.projectkorra.projectkorra.ability.AvatarAbility;
+import com.projectkorra.projectkorra.ability.BlueFireAbility;
 import com.projectkorra.projectkorra.ability.FireAbility;
 import com.projectkorra.projectkorra.command.Commands;
 import com.projectkorra.projectkorra.firebending.BlazeArc;
@@ -66,6 +68,16 @@ public class ESFire extends AvatarAbility implements AddonAbility {
 		burnTime = config.getLong("Abilities.Avatar.ElementSphere.Fire.BurnDuration");
 		speed = config.getInt("Abilities.Avatar.ElementSphere.Fire.Speed");
 		controllable = config.getBoolean("Abilities.Avatar.ElementSphere.Fire.Controllable");
+		
+		applyModifiers();
+	}
+	
+	private void applyModifiers() {
+		if (bPlayer.canUseSubElement(SubElement.BLUE_FIRE)) {
+			cooldown *= BlueFireAbility.getCooldownFactor();
+			range *= BlueFireAbility.getRangeFactor();
+			damage *= BlueFireAbility.getDamageFactor();
+		}
 	}
 
 	@Override
@@ -100,8 +112,12 @@ public class ESFire extends AvatarAbility implements AddonAbility {
 				return;
 			}
 
+			if (bPlayer.hasSubElement(SubElement.BLUE_FIRE)) {
+				ParticleEffect.SOUL_FIRE_FLAME.display(location, 5, Math.random(), Math.random(), Math.random(), 0.02);
+			} else {
+				ParticleEffect.FLAME.display(location, 5, Math.random(), Math.random(), Math.random(), 0.02);
+			}
 			ParticleEffect.SMOKE_LARGE.display(location, 2, Math.random(), Math.random(), Math.random(), 0.01);
-			ParticleEffect.FLAME.display(location, 5, Math.random(), Math.random(), Math.random(), 0.02);
 			FireAbility.playFirebendingSound(location);
 
 			placeFire();

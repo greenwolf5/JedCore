@@ -94,7 +94,9 @@ public class BloodPuppet extends BloodAbility implements AddonAbility {
 				return true;
 			case GHAST:
 				return true;
-			case PIG_ZOMBIE:
+			case PIGLIN:
+				return true;
+			case ZOMBIFIED_PIGLIN:
 				return true;
 			case ENDERMAN:
 				return true;

@@ -32,7 +32,6 @@ import static java.util.stream.Collectors.toList;
 public class EarthKick extends EarthAbility implements AddonAbility {
 	private List<TempFallingBlock> temps = new ArrayList<>();
 
-	private Material material;
 	private BlockData materialData;
 	private Location location;
 	private Random rand = new Random();
@@ -81,7 +80,6 @@ public class EarthKick extends EarthAbility implements AddonAbility {
 		}
 
 		if (block != null && !isMetal(block)) {
-			material = block.getType();
 			materialData = block.getBlockData().clone();
 			location.setX(block.getX() + 0.5);
 			location.setY(block.getY());

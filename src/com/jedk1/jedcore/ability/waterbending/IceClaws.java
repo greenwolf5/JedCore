@@ -59,6 +59,14 @@ public class IceClaws extends IceAbility implements AddonAbility {
 		damage = config.getDouble("Abilities.Water.IceClaws.Damage");
 		range = config.getDouble("Abilities.Water.IceClaws.Range");
 		throwable = config.getBoolean("Abilities.Water.IceClaws.Throwable");
+		
+		applyModifiers();
+	}
+	
+	private void applyModifiers() {
+		cooldown -= ((long) getNightFactor(cooldown) - cooldown);
+		damage = getNightFactor(damage);
+		range = getNightFactor(range);
 	}
 
 	@Override

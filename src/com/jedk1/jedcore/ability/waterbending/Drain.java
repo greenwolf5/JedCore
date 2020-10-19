@@ -12,7 +12,6 @@ import com.projectkorra.projectkorra.util.ParticleEffect;
 
 import com.projectkorra.projectkorra.util.TempBlock;
 import com.projectkorra.projectkorra.waterbending.util.WaterReturn;
-import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Biome;
@@ -36,7 +35,11 @@ public class Drain extends WaterAbility implements AddonAbility {
 	private static final Biome[] INVALID_BIOMES = {
 			Biome.DESERT,
 			Biome.DESERT_HILLS,
-			Biome.NETHER,
+			Biome.BASALT_DELTAS,
+			Biome.CRIMSON_FOREST,
+			Biome.NETHER_WASTES,
+			Biome.SOUL_SAND_VALLEY,
+			Biome.WARPED_FOREST,
 			Biome.BADLANDS,
 			Biome.BADLANDS_PLATEAU,
 			Biome.ERODED_BADLANDS,
@@ -109,6 +112,16 @@ public class Drain extends WaterAbility implements AddonAbility {
 		blastSpeed = config.getDouble("Abilities.Water.Drain.BlastSpeed");
 		useRain = config.getBoolean("Abilities.Water.Drain.AllowRainSource");
 		drainTemps = config.getBoolean("Abilities.Water.Drain.DrainTempBlocks");
+		
+		applyModifiers();
+	}
+	
+	private void applyModifiers() {
+		if (isNight(player.getWorld())) {
+			cooldown -= ((long) getNightFactor(cooldown) - cooldown);
+			blastRange = getNightFactor(blastRange);
+			blastDamage = getNightFactor(blastDamage);
+		}
 	}
 	
 	public boolean isValidBiome(Biome biome) {
@@ -251,8 +264,7 @@ public class Drain extends WaterAbility implements AddonAbility {
 			Block block = locs.get(rand.nextInt(locs.size()-1)).getBlock();
 			if (block != null && block.getY() > 2 && block.getY() < 255) {
 				if (rand.nextInt(chance) == 0) {
-					Location temp = player.getLocation();
-					Biome biome = temp.getWorld().getBiome(temp.getBlockX(), temp.getBlockZ());
+					Biome biome = player.getLocation().getBlock().getBiome();
 					if (useRain && player.getWorld().hasStorm() && isValidBiome(biome)) {
 						if (player.getLocation().getY() >= player.getWorld().getHighestBlockAt(player.getLocation()).getLocation().getY()) {
 							if (block.getLocation().getY() >= player.getWorld().getHighestBlockAt(player.getLocation()).getLocation().getY()) {

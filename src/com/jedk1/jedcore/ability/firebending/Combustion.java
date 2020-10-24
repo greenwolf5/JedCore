@@ -42,6 +42,8 @@ public class Combustion extends CombustionAbility implements AddonAbility {
 	public Combustion(Player player) {
 		super(player);
 
+		if (!isEnabled()) return;
+
 		if (this.player == null || !bPlayer.canBend(this) || !bPlayer.canCombustionbend() || hasAbility(player, Combustion.class)) {
 			return;
 		}
@@ -144,7 +146,7 @@ public class Combustion extends CombustionAbility implements AddonAbility {
 		ConfigurationSection config = JedCoreConfig.getConfig(this.player);
 		return "* JedCore Addon *\n" + config.getString("Abilities.Fire.Combustion.Description");
 	}
-	
+
 	@Override
 	public void load() {
 
@@ -154,7 +156,7 @@ public class Combustion extends CombustionAbility implements AddonAbility {
 	public void stop() {
 
 	}
-	
+
 	@Override
 	public boolean isEnabled() {
 		ConfigurationSection config = JedCoreConfig.getConfig(this.player);

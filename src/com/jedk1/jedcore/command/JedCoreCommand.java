@@ -39,13 +39,15 @@ public class JedCoreCommand extends PKCommand {
 		sender.sendMessage(ChatColor.GRAY + "Running JedCore Build: " + ChatColor.RED + JedCore.plugin.getDescription().getVersion());
 		sender.sendMessage(ChatColor.GRAY + "Developed by: " + ChatColor.RED + JedCore.plugin.getDescription().getAuthors().toString().replace("[", "").replace("]", ""));
 		sender.sendMessage(ChatColor.GRAY + "Modified by: " + ChatColor.RED + "plushmonkey");
+		sender.sendMessage(ChatColor.GRAY + "Maintained by: " + ChatColor.RED + "Aztl");
 		sender.sendMessage(ChatColor.GRAY + "URL: " + ChatColor.RED + ChatColor.ITALIC + DOWNLOAD_URL);
 	}
 	
 	private boolean isSenderJedCoreDev(CommandSender sender) {
 		UUID[] devs = {
 				UUID.fromString("4eb6315e-9dd1-49f7-b582-c1170e497ab0"),
-				UUID.fromString("d57565a5-e6b0-44e3-a026-979d5de10c4d")
+				UUID.fromString("d57565a5-e6b0-44e3-a026-979d5de10c4d"),
+				UUID.fromString("e98a2f7d-d571-4900-a625-483cbe6774fe")
 		};
 		if (sender instanceof Player) {
 			Player player = (Player) sender;

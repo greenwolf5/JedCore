@@ -4,6 +4,11 @@ Download releases [here](https://github.com/Aztlon/JedCore/releases).
 
 ## Changelog
 
+### 2.9.5
+- Added modifiers for blue fire, day factor, and night factor where applicable
+- Added new nether biomes for FrostBreath and Drain's biome requirement list
+- Changed version number to 2.9.5
+
 ### 2.9.5-alpha.1
 - Added Blue Fire support for all fire abilities
 - Changed WaterGimbal combo abilities to Torrent > Torrent > WaterManipulation

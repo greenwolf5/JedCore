@@ -7,6 +7,7 @@ import com.jedk1.jedcore.util.RegenTempBlock;
 import com.projectkorra.projectkorra.GeneralMethods;
 import com.projectkorra.projectkorra.ability.AddonAbility;
 import com.projectkorra.projectkorra.ability.AvatarAbility;
+import com.projectkorra.projectkorra.attribute.Attribute;
 import com.projectkorra.projectkorra.util.DamageHandler;
 import com.projectkorra.projectkorra.util.ParticleEffect;
 
@@ -23,13 +24,18 @@ public class SpiritBeam extends AvatarAbility implements AddonAbility {
 
 	private Location location;
 	private Vector direction;
+	@Attribute(Attribute.DURATION)
 	private long duration;
+	@Attribute(Attribute.COOLDOWN)
 	private long cooldown;
+	@Attribute(Attribute.RANGE)
 	private double range;
 	private boolean avataronly;
+	@Attribute(Attribute.DAMAGE)
 	private double damage;
 	private boolean blockdamage;
 	private long regen;
+	@Attribute(Attribute.RADIUS)
 	private double radius;
 	private long time;
 

@@ -12,6 +12,7 @@ import com.projectkorra.projectkorra.ability.ComboAbility;
 import com.projectkorra.projectkorra.ability.ElementalAbility;
 import com.projectkorra.projectkorra.ability.WaterAbility;
 import com.projectkorra.projectkorra.ability.util.ComboManager.AbilityInformation;
+import com.projectkorra.projectkorra.attribute.Attribute;
 import com.projectkorra.projectkorra.util.BlockSource;
 import com.projectkorra.projectkorra.util.ClickType;
 import com.projectkorra.projectkorra.util.TempBlock;
@@ -41,11 +42,17 @@ import java.util.Random;
 
 public class WaterGimbal extends WaterAbility implements AddonAbility, ComboAbility {
 
+	@Attribute(Attribute.SELECT_RANGE)
 	private int sourcerange;
+	@Attribute(Attribute.COOLDOWN)
 	private long cooldown;
+	@Attribute("Width")
 	private double ringsize;
+	@Attribute(Attribute.RANGE)
 	private double range;
+	@Attribute(Attribute.DAMAGE)
 	private double damage;
+	@Attribute(Attribute.SPEED)
 	private double speed;
 	private int animspeed;
 	private boolean plantSourcing;

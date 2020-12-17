@@ -10,6 +10,7 @@ import com.projectkorra.projectkorra.GeneralMethods;
 import com.projectkorra.projectkorra.ability.AddonAbility;
 import com.projectkorra.projectkorra.ability.BlueFireAbility;
 import com.projectkorra.projectkorra.ability.FireAbility;
+import com.projectkorra.projectkorra.attribute.Attribute;
 import com.projectkorra.projectkorra.util.DamageHandler;
 import com.projectkorra.projectkorra.util.ParticleEffect;
 
@@ -29,11 +30,16 @@ import java.util.Random;
 
 public class FireComet extends FireAbility implements AddonAbility {
 
+	@Attribute(Attribute.COOLDOWN)
 	private long cooldown;
+	@Attribute(Attribute.CHARGE_DURATION)
 	private long charge;
 	private long regen;
+	@Attribute(Attribute.RANGE)
 	private int range;
+	@Attribute(Attribute.DAMAGE)
 	private double damage;
+	@Attribute(Attribute.RADIUS)
 	private double blastRadius;
 	private boolean cometOnly;
 	private boolean avatarBypass;

@@ -7,6 +7,7 @@ import com.projectkorra.projectkorra.GeneralMethods;
 import com.projectkorra.projectkorra.ability.AddonAbility;
 import com.projectkorra.projectkorra.ability.EarthAbility;
 import com.projectkorra.projectkorra.ability.LavaAbility;
+import com.projectkorra.projectkorra.attribute.Attribute;
 import com.projectkorra.projectkorra.earthbending.passive.DensityShift;
 import com.projectkorra.projectkorra.util.Information;
 import com.projectkorra.projectkorra.util.ParticleEffect;
@@ -29,10 +30,14 @@ import java.util.Random;
 
 public class Fissure extends LavaAbility implements AddonAbility {
 
+	@Attribute(Attribute.RANGE)
 	private int slapRange;
+	@Attribute(Attribute.WIDTH)
 	private int maxWidth;
 	private long slapDelay;
+	@Attribute(Attribute.DURATION)
 	private long duration;
+	@Attribute(Attribute.COOLDOWN)
 	private long cooldown;
 
 	private Location location;

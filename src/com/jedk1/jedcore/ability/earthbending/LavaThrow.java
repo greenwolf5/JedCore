@@ -6,6 +6,7 @@ import com.jedk1.jedcore.util.RegenTempBlock;
 import com.projectkorra.projectkorra.GeneralMethods;
 import com.projectkorra.projectkorra.ability.AddonAbility;
 import com.projectkorra.projectkorra.ability.LavaAbility;
+import com.projectkorra.projectkorra.attribute.Attribute;
 import com.projectkorra.projectkorra.command.Commands;
 import com.projectkorra.projectkorra.util.DamageHandler;
 import com.projectkorra.projectkorra.util.ParticleEffect;
@@ -27,12 +28,18 @@ import java.util.Random;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class LavaThrow extends LavaAbility implements AddonAbility {
+	@Attribute(Attribute.COOLDOWN)
 	private long cooldown;
+	@Attribute(Attribute.RANGE)
 	private int range;
+	@Attribute(Attribute.DAMAGE)
 	private double damage;
+	@Attribute(Attribute.SELECT_RANGE)
 	private int sourceRange;
 	private long sourceRegen;
+	@Attribute("MaxShots")
 	private int shotMax;
+	@Attribute(Attribute.FIRE_TICK)
 	private int fireTicks;
 
 	private Location location;

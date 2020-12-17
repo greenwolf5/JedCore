@@ -6,6 +6,7 @@ import com.jedk1.jedcore.util.TempFallingBlock;
 import com.projectkorra.projectkorra.GeneralMethods;
 import com.projectkorra.projectkorra.ability.AddonAbility;
 import com.projectkorra.projectkorra.ability.MetalAbility;
+import com.projectkorra.projectkorra.attribute.Attribute;
 import com.projectkorra.projectkorra.util.BlockSource;
 import com.projectkorra.projectkorra.util.ClickType;
 import com.projectkorra.projectkorra.util.DamageHandler;
@@ -29,10 +30,15 @@ import java.util.*;
 
 public class MetalFragments extends MetalAbility implements AddonAbility {
 
+	@Attribute("MaxSources")
 	private int maxSources;
+	@Attribute(Attribute.SELECT_RANGE)
 	private int selectRange;
+	@Attribute("MaxShots")
 	private int maxFragments;
+	@Attribute(Attribute.DAMAGE)
 	private double damage;
+	@Attribute(Attribute.COOLDOWN)
 	private long cooldown;
 
 	public List<Block> sources = new ArrayList<Block>();

@@ -6,6 +6,7 @@ import java.util.Random;
 
 import com.jedk1.jedcore.configuration.JedCoreConfig;
 import com.projectkorra.projectkorra.ability.EarthAbility;
+import com.projectkorra.projectkorra.attribute.Attribute;
 import com.projectkorra.projectkorra.util.Information;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -30,11 +31,16 @@ import com.projectkorra.projectkorra.util.ParticleEffect;
 
 public class LavaFlux extends LavaAbility implements AddonAbility {
 
+	@Attribute(Attribute.SPEED)
 	private int speed;
+	@Attribute(Attribute.RANGE)
 	private int range;
+	@Attribute(Attribute.COOLDOWN)
 	private long cooldown;
+	@Attribute(Attribute.DURATION)
 	private long duration;
 	private long cleanup;
+	@Attribute(Attribute.DAMAGE)
 	private double damage;
 	private boolean wave;
 

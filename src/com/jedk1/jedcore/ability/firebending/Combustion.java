@@ -15,6 +15,7 @@ import com.projectkorra.projectkorra.ability.AirAbility;
 import com.projectkorra.projectkorra.ability.CombustionAbility;
 import com.projectkorra.projectkorra.ability.WaterAbility;
 import com.projectkorra.projectkorra.ability.util.Collision;
+import com.projectkorra.projectkorra.attribute.Attribute;
 import com.projectkorra.projectkorra.util.DamageHandler;
 import com.projectkorra.projectkorra.util.ParticleEffect;
 import com.projectkorra.projectkorra.util.TempBlock;
@@ -36,6 +37,7 @@ import java.util.Random;
 public class Combustion extends CombustionAbility implements AddonAbility {
 	private State state;
 	private Location location;
+	@Attribute(Attribute.COOLDOWN)
 	private long cooldown;
 	private CompositeRemovalPolicy removalPolicy;
 

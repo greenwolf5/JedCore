@@ -4,6 +4,7 @@ import java.util.*;
 
 import com.jedk1.jedcore.configuration.JedCoreConfig;
 import com.projectkorra.projectkorra.ability.ElementalAbility;
+import com.projectkorra.projectkorra.attribute.Attribute;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.configuration.ConfigurationSection;
@@ -30,7 +31,9 @@ public class BloodPuppet extends BloodAbility implements AddonAbility {
 	private boolean bloodpuppetThroughBlocks;
 	private boolean requireBound;
 	private int distance;
+	@Attribute(Attribute.DURATION)
 	private long holdtime;
+	@Attribute(Attribute.COOLDOWN)
 	private long cooldown;
 
 	private long time;

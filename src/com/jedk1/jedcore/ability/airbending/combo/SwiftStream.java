@@ -7,6 +7,7 @@ import com.projectkorra.projectkorra.ability.AddonAbility;
 import com.projectkorra.projectkorra.ability.ComboAbility;
 import com.projectkorra.projectkorra.ability.FlightAbility;
 import com.projectkorra.projectkorra.ability.util.ComboManager.AbilityInformation;
+import com.projectkorra.projectkorra.attribute.Attribute;
 import com.projectkorra.projectkorra.object.HorizontalVelocityTracker;
 import com.projectkorra.projectkorra.util.ClickType;
 
@@ -21,9 +22,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SwiftStream extends FlightAbility implements AddonAbility, ComboAbility {
-	
+
+	@Attribute(Attribute.COOLDOWN)
 	public long cooldown;
 	public double dragFactor;
+	@Attribute(Attribute.DURATION)
 	public long duration;
 
 	private List<LivingEntity> affectedEntities = new ArrayList<LivingEntity>();

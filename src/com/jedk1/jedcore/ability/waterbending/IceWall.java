@@ -7,6 +7,7 @@ import java.util.Random;
 
 import com.jedk1.jedcore.configuration.JedCoreConfig;
 import com.projectkorra.projectkorra.ability.*;
+import com.projectkorra.projectkorra.attribute.Attribute;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.Sound;
@@ -35,13 +36,18 @@ import com.projectkorra.projectkorra.waterbending.ice.IceBlast;
 public class IceWall extends IceAbility implements AddonAbility {
 
 	public static List<IceWall> instances = new ArrayList<IceWall>();
+	@Attribute(Attribute.HEIGHT)
 	private int maxHeight;
 	private int minHeight;
 	private int width;
+	@Attribute(Attribute.RANGE)
 	private int range;
+	@Attribute("Health")
 	private int maxHealth;
 	private int minHealth;
+	@Attribute(Attribute.DAMAGE)
 	private double damage;
+	@Attribute(Attribute.COOLDOWN)
 	private long cooldown;
 
 	public static boolean stackable;

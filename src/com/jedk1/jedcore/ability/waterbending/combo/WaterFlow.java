@@ -9,6 +9,7 @@ import com.projectkorra.projectkorra.GeneralMethods;
 import com.projectkorra.projectkorra.ability.*;
 import com.projectkorra.projectkorra.ability.util.ComboManager.AbilityInformation;
 import com.projectkorra.projectkorra.airbending.AirSpout;
+import com.projectkorra.projectkorra.attribute.Attribute;
 import com.projectkorra.projectkorra.command.Commands;
 import com.projectkorra.projectkorra.earthbending.Catapult;
 import com.projectkorra.projectkorra.util.BlockSource;
@@ -35,12 +36,17 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class WaterFlow extends WaterAbility implements AddonAbility, ComboAbility {
 
+	@Attribute(Attribute.SELECT_RANGE)
 	private int sourcerange; //10
+	@Attribute(Attribute.RANGE)
 	private int maxrange; //40
 	private int minrange; //8
+	@Attribute(Attribute.DURATION)
 	private long duration; //10000
+	@Attribute(Attribute.COOLDOWN)
 	private long cooldown; //15000
 	private long meltdelay; //5000
+	@Attribute("Length")
 	private long trail; //80
 	private boolean avatar; //true
 	private boolean stayatsource; //true

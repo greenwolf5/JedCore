@@ -9,6 +9,7 @@ import com.projectkorra.projectkorra.ability.AddonAbility;
 import com.projectkorra.projectkorra.ability.AvatarAbility;
 import com.projectkorra.projectkorra.ability.EarthAbility;
 import com.projectkorra.projectkorra.ability.ElementalAbility;
+import com.projectkorra.projectkorra.attribute.Attribute;
 import com.projectkorra.projectkorra.command.Commands;
 import com.projectkorra.projectkorra.util.DamageHandler;
 import com.projectkorra.projectkorra.util.ParticleEffect;
@@ -31,8 +32,11 @@ import java.util.Random;
 public class ESEarth extends AvatarAbility implements AddonAbility {
 
 	private long revertDelay;
+	@Attribute(Attribute.DAMAGE)
 	private double damage;
+	@Attribute("Size")
 	private int impactSize;
+	@Attribute(Attribute.COOLDOWN)
 	private long cooldown;
 	private TempFallingBlock tfb;
 

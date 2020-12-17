@@ -8,6 +8,7 @@ import com.projectkorra.projectkorra.GeneralMethods;
 import com.projectkorra.projectkorra.ability.AddonAbility;
 import com.projectkorra.projectkorra.ability.ElementalAbility;
 import com.projectkorra.projectkorra.ability.WaterAbility;
+import com.projectkorra.projectkorra.attribute.Attribute;
 import com.projectkorra.projectkorra.util.ParticleEffect;
 
 import com.projectkorra.projectkorra.util.TempBlock;
@@ -48,10 +49,14 @@ public class Drain extends WaterAbility implements AddonAbility {
 	};
 
 	private long regenDelay;
+	@Attribute(Attribute.DURATION)
 	private long duration; // 2000
+	@Attribute(Attribute.COOLDOWN)
 	private long cooldown; // 2000
 	private double absorbSpeed; // 0.1
+	@Attribute(Attribute.RADIUS)
 	private int radius; // 6
+	@Attribute("Chance")
 	private int chance; // 20
 	private int absorbRate; // 6
 	private int holdRange; // 2

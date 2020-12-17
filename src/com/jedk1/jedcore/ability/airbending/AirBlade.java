@@ -7,6 +7,7 @@ import com.jedk1.jedcore.configuration.JedCoreConfig;
 import com.projectkorra.projectkorra.GeneralMethods;
 import com.projectkorra.projectkorra.ability.AddonAbility;
 import com.projectkorra.projectkorra.ability.AirAbility;
+import com.projectkorra.projectkorra.attribute.Attribute;
 import com.projectkorra.projectkorra.util.DamageHandler;
 
 import org.bukkit.Location;
@@ -22,10 +23,16 @@ public class AirBlade extends AirAbility implements AddonAbility {
 	private Location location;
 	private Vector direction;
 	private double travelled;
+
+	@Attribute("Growth")
 	private double growth = 1;
+	@Attribute(Attribute.COOLDOWN)
 	private long cooldown;
+	@Attribute(Attribute.RANGE)
 	private double range;
+	@Attribute(Attribute.DAMAGE)
 	private double damage;
+	@Attribute("CollisionRadius")
 	private double entityCollisionRadius;
 
 	public AirBlade(Player player) {

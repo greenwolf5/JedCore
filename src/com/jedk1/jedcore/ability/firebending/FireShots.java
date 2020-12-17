@@ -13,6 +13,7 @@ import com.jedk1.jedcore.util.FireTick;
 import com.projectkorra.projectkorra.ability.CoreAbility;
 import com.projectkorra.projectkorra.ability.util.Collision;
 import com.projectkorra.projectkorra.airbending.AirShield;
+import com.projectkorra.projectkorra.attribute.Attribute;
 import com.projectkorra.projectkorra.firebending.util.FireDamageTimer;
 import org.bukkit.Location;
 import org.bukkit.configuration.ConfigurationSection;
@@ -33,11 +34,17 @@ import static java.util.stream.Collectors.toList;
 
 public class FireShots extends FireAbility implements AddonAbility {
 	private List<FireShot> shots = new ArrayList<>();
+	@Attribute(Attribute.COOLDOWN)
 	private long cooldown;
+	@Attribute("MaxShots")
 	private int startAmount;
+	@Attribute(Attribute.FIRE_TICK)
 	private int fireticks;
+	@Attribute(Attribute.RANGE)
 	private int range;
+	@Attribute(Attribute.DAMAGE)
 	private double damage;
+	@Attribute("CollisionRadius")
 	private double collisionRadius;
 
 	public int amount;

@@ -13,6 +13,7 @@ import com.projectkorra.projectkorra.ability.CoreAbility;
 import com.projectkorra.projectkorra.ability.EarthAbility;
 import com.projectkorra.projectkorra.ability.ElementalAbility;
 import com.projectkorra.projectkorra.ability.util.Collision;
+import com.projectkorra.projectkorra.attribute.Attribute;
 import com.projectkorra.projectkorra.command.Commands;
 import com.projectkorra.projectkorra.util.DamageHandler;
 import com.projectkorra.projectkorra.util.TempBlock;
@@ -38,11 +39,14 @@ public class MudSurge extends EarthAbility implements AddonAbility {
 	private int blindChance;
 	private int blindTicks;
 	private boolean multipleHits;
+	@Attribute(Attribute.DAMAGE)
 	private double damage;
 	private int waves;
 	private int waterSearchRadius;
 	private boolean wetSource;
+	@Attribute(Attribute.COOLDOWN)
 	private long cooldown;
+	@Attribute("CollisionRadius")
 	private double collisionRadius;
 
 	public static int surgeInterval = 300;

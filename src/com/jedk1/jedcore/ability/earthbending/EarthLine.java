@@ -8,6 +8,8 @@ import com.jedk1.jedcore.util.TempFallingBlock;
 import com.projectkorra.projectkorra.GeneralMethods;
 import com.projectkorra.projectkorra.ability.AddonAbility;
 import com.projectkorra.projectkorra.ability.EarthAbility;
+import com.projectkorra.projectkorra.ability.ElementalAbility;
+import com.projectkorra.projectkorra.attribute.Attribute;
 import com.projectkorra.projectkorra.command.Commands;
 import com.projectkorra.projectkorra.earthbending.passive.DensityShift;
 import com.projectkorra.projectkorra.util.BlockSource;
@@ -38,11 +40,16 @@ public class EarthLine extends EarthAbility implements AddonAbility {
 
 	private long usecooldown;
 	private long preparecooldown;
+	@Attribute(Attribute.DURATION)
 	private long maxduration;
+	@Attribute(Attribute.RANGE)
 	private double range;
+	@Attribute(Attribute.SELECT_RANGE)
 	private double preparerange;
 	private double sourcekeeprange;
+	@Attribute(Attribute.RADIUS)
 	private int affectingradius;
+	@Attribute(Attribute.DAMAGE)
 	private double damage;
 	private boolean allowChangeDirection;
 	private CompositeRemovalPolicy removalPolicy;

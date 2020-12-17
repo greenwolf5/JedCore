@@ -6,6 +6,7 @@ import com.jedk1.jedcore.util.RegenTempBlock;
 import com.projectkorra.projectkorra.GeneralMethods;
 import com.projectkorra.projectkorra.ability.AddonAbility;
 import com.projectkorra.projectkorra.ability.WaterAbility;
+import com.projectkorra.projectkorra.attribute.Attribute;
 import com.projectkorra.projectkorra.util.DamageHandler;
 
 import org.bukkit.Location;
@@ -24,8 +25,11 @@ public class DrainBlast extends WaterAbility implements AddonAbility {
 	private Vector direction;
 	private double travelled;
 
+	@Attribute(Attribute.RANGE)
 	private double blastRange; // 20
+	@Attribute(Attribute.DAMAGE)
 	private double blastDamage; // 1.5
+	@Attribute(Attribute.SPEED)
 	private double blastSpeed; // 2
 	private int holdRange; // 2
 

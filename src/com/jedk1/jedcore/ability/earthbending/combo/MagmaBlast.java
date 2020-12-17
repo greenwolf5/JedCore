@@ -4,6 +4,7 @@ import com.jedk1.jedcore.collision.AABB;
 import com.jedk1.jedcore.configuration.JedCoreConfig;
 import com.jedk1.jedcore.util.MaterialUtil;
 import com.projectkorra.projectkorra.ability.ElementalAbility;
+import com.projectkorra.projectkorra.attribute.Attribute;
 import com.projectkorra.projectkorra.earthbending.lava.LavaFlow;
 
 import com.jedk1.jedcore.JedCore;
@@ -41,12 +42,18 @@ public class MagmaBlast extends LavaAbility implements AddonAbility, ComboAbilit
 	private List<TempBlock> blocks = new ArrayList<>();
 	private List<TempFallingBlock> firedBlocks = new ArrayList<>();
 
+	@Attribute(Attribute.COOLDOWN)
 	private long cooldown;
+	@Attribute(Attribute.DURATION)
 	private long maxDuration;
 	private long shotCooldown;
+	@Attribute("MaxSources")
 	private int maxSources;
+	@Attribute(Attribute.SELECT_RANGE)
 	private int sourceRange;
+	@Attribute(Attribute.SELECT_RANGE)
 	private double selectRange;
+	@Attribute(Attribute.DAMAGE)
 	private double damage;
 	private double fireSpeed;
 	// How far away the player is allowed to be from the sources before the ability is destroyed.

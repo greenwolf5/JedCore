@@ -10,6 +10,7 @@ import com.projectkorra.projectkorra.ability.AddonAbility;
 import com.projectkorra.projectkorra.ability.ChiAbility;
 import com.projectkorra.projectkorra.ability.CoreAbility;
 import com.projectkorra.projectkorra.ability.util.Collision;
+import com.projectkorra.projectkorra.attribute.Attribute;
 import com.projectkorra.projectkorra.util.DamageHandler;
 
 import org.bukkit.Location;
@@ -34,8 +35,10 @@ public class DaggerThrow extends ChiAbility implements AddonAbility {
 	private Location location;
 	private long time;
 	private int shots = 1;
+	@Attribute(Attribute.COOLDOWN)
 	private long cooldown;
 	private boolean limitEnabled;
+	@Attribute("MaxShots")
 	private int maxShots;
 	private int hits = 0;
 	private List<Arrow> arrows = new ArrayList<>();

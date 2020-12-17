@@ -8,6 +8,7 @@ import com.projectkorra.projectkorra.ability.AddonAbility;
 import com.projectkorra.projectkorra.ability.ComboAbility;
 import com.projectkorra.projectkorra.ability.EarthAbility;
 import com.projectkorra.projectkorra.ability.util.ComboManager.AbilityInformation;
+import com.projectkorra.projectkorra.attribute.Attribute;
 import com.projectkorra.projectkorra.util.ClickType;
 
 import com.projectkorra.projectkorra.util.TempBlock;
@@ -28,11 +29,14 @@ import java.util.List;
 import java.util.Random;
 
 public class Crevice extends EarthAbility implements AddonAbility, ComboAbility {
-	
+
+	@Attribute(Attribute.RANGE)
 	private double range;
 	private long regenDelay;
+	@Attribute("Depth")
 	private int randomDepth;
 	private int avatarDepth;
+	@Attribute(Attribute.COOLDOWN)
 	private long cooldown;
 
 	private Location origin;

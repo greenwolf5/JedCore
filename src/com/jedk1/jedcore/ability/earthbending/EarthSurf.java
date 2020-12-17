@@ -9,6 +9,7 @@ import com.projectkorra.projectkorra.GeneralMethods;
 import com.projectkorra.projectkorra.ability.AddonAbility;
 import com.projectkorra.projectkorra.ability.EarthAbility;
 import com.projectkorra.projectkorra.ability.ElementalAbility;
+import com.projectkorra.projectkorra.attribute.Attribute;
 import com.projectkorra.projectkorra.earthbending.passive.DensityShift;
 import com.projectkorra.projectkorra.util.TempBlock;
 
@@ -33,12 +34,15 @@ public class EarthSurf extends EarthAbility implements AddonAbility {
 	//Player Positioning
 	private double distOffset = 2.5;
 
+	@Attribute(Attribute.COOLDOWN)
 	private long cooldown;
 	private long minimumCooldown;
+	@Attribute(Attribute.DURATION)
 	private long duration;
 	private boolean cooldownEnabled;
 	private boolean durationEnabled;
 	private boolean removeOnAnyDamage;
+	@Attribute(Attribute.SPEED)
 	private double speed;
 	private double springStiffness;
 	private Set<Block> ridingBlocks = new HashSet<>();

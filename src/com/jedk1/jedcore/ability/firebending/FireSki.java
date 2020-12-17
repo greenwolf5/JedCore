@@ -10,6 +10,7 @@ import com.projectkorra.projectkorra.GeneralMethods;
 import com.projectkorra.projectkorra.ability.AddonAbility;
 import com.projectkorra.projectkorra.ability.BlueFireAbility;
 import com.projectkorra.projectkorra.ability.FireAbility;
+import com.projectkorra.projectkorra.attribute.Attribute;
 import com.projectkorra.projectkorra.util.ParticleEffect;
 
 import org.bukkit.Location;
@@ -25,10 +26,14 @@ public class FireSki extends FireAbility implements AddonAbility {
 	private Location location;
 	private long time;
 
+	@Attribute(Attribute.COOLDOWN)
 	private long cooldown;
+	@Attribute(Attribute.DURATION)
 	private long duration;
+	@Attribute(Attribute.SPEED)
 	private double speed;
 	private boolean ignite;
+	@Attribute(Attribute.FIRE_TICK)
 	private int fireTicks;
 	private double requiredHeight;
 

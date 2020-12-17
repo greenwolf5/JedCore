@@ -8,6 +8,7 @@ import com.projectkorra.projectkorra.ability.AddonAbility;
 import com.projectkorra.projectkorra.ability.ElementalAbility;
 import com.projectkorra.projectkorra.ability.SandAbility;
 import com.projectkorra.projectkorra.ability.util.Collision;
+import com.projectkorra.projectkorra.attribute.Attribute;
 import com.projectkorra.projectkorra.earthbending.passive.DensityShift;
 import com.projectkorra.projectkorra.util.BlockSource;
 import com.projectkorra.projectkorra.util.ClickType;
@@ -37,10 +38,15 @@ import java.util.stream.Collectors;
 
 public class SandBlast extends SandAbility implements AddonAbility {
 
+	@Attribute(Attribute.COOLDOWN)
 	private long cooldown;
+	@Attribute(Attribute.SELECT_RANGE)
 	private double sourcerange;
+	@Attribute(Attribute.RANGE)
 	private int range;
+	@Attribute("MaxShots")
 	private int maxBlasts;
+	@Attribute(Attribute.DAMAGE)
 	private static double damage;
 
 	private Block source;

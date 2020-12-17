@@ -8,6 +8,7 @@ import com.jedk1.jedcore.util.FireTick;
 import com.projectkorra.projectkorra.ability.CoreAbility;
 import com.projectkorra.projectkorra.ability.util.Collision;
 import com.projectkorra.projectkorra.airbending.AirShield;
+import com.projectkorra.projectkorra.attribute.Attribute;
 import org.bukkit.Location;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.Entity;
@@ -30,13 +31,18 @@ public class FireBall extends FireAbility implements AddonAbility {
 	private Location location;
 	private Vector direction;
 	private double distanceTravelled;
-	
+
+	@Attribute(Attribute.RANGE)
 	private long range;
+	@Attribute(Attribute.FIRE_TICK)
 	private long fireticks;
+	@Attribute(Attribute.COOLDOWN)
 	private long cooldown;
+	@Attribute(Attribute.DAMAGE)
 	private double damage;
 	private boolean controllable;
 	private boolean fireTrail;
+	@Attribute("CollisionRadius")
 	private double collisionRadius;
 
 	public FireBall(Player player){

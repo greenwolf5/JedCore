@@ -7,6 +7,7 @@ import com.projectkorra.projectkorra.ability.AddonAbility;
 import com.projectkorra.projectkorra.ability.AirAbility;
 import com.projectkorra.projectkorra.airbending.AirSpout;
 
+import com.projectkorra.projectkorra.attribute.Attribute;
 import org.bukkit.Location;
 import org.bukkit.block.BlockFace;
 import org.bukkit.configuration.ConfigurationSection;
@@ -17,11 +18,14 @@ public class AirGlide extends AirAbility implements AddonAbility {
 
 	// The player must touch the ground for the cooldown to start if this is true.
 	private boolean requireGround;
+	@Attribute(Attribute.SPEED)
 	private double speed;
 	private double fallSpeed;
 	private int particles;
 	private boolean airspout;
+	@Attribute(Attribute.COOLDOWN)
 	private long cooldown;
+	@Attribute(Attribute.DURATION)
 	private long duration;
 	private long lastCooldown;
 	private boolean progressing;

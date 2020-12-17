@@ -10,6 +10,7 @@ import com.projectkorra.projectkorra.ability.AvatarAbility;
 import com.projectkorra.projectkorra.ability.MultiAbility;
 import com.projectkorra.projectkorra.ability.util.MultiAbilityManager;
 import com.projectkorra.projectkorra.ability.util.MultiAbilityManager.MultiAbilityInfoSub;
+import com.projectkorra.projectkorra.attribute.Attribute;
 import com.projectkorra.projectkorra.util.ParticleEffect;
 
 import org.bukkit.ChatColor;
@@ -41,9 +42,13 @@ public class ElementSphere extends AvatarAbility implements AddonAbility, MultiA
 	public int waterUses;
 	public int earthUses;
 
+	@Attribute(Attribute.COOLDOWN)
 	public long cooldown;
+	@Attribute(Attribute.DURATION)
 	public long duration;
+	@Attribute(Attribute.HEIGHT)
 	private double height;
+	@Attribute(Attribute.SPEED)
 	private double speed;
 
 	private boolean setup;
@@ -51,11 +56,16 @@ public class ElementSphere extends AvatarAbility implements AddonAbility, MultiA
 	private double yaw;
 	private int point;
 	private long time;
-	
+
+	@Attribute("CooldownAir")
 	public long cooldownAir;
+	@Attribute("CooldownEarth")
 	public long cooldownEarth;
+	@Attribute("CooldownFire")
 	public long cooldownFire;
+	@Attribute("CooldownWater")
 	public long cooldownWater;
+	@Attribute("CooldownStream")
 	public long cooldownStream;
 
 	private long lastClickTime;
@@ -349,6 +359,11 @@ public class ElementSphere extends AvatarAbility implements AddonAbility, MultiA
 		return location;
 	}
 
+	@Override
+	public boolean requireAvatar() {
+		return false;
+	}
+	
 	@Override
 	public String getName() {
 		return "ElementSphere";

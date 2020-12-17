@@ -8,6 +8,7 @@ import com.projectkorra.projectkorra.GeneralMethods;
 import com.projectkorra.projectkorra.ability.AddonAbility;
 import com.projectkorra.projectkorra.ability.AirAbility;
 import com.projectkorra.projectkorra.ability.util.Collision;
+import com.projectkorra.projectkorra.attribute.Attribute;
 import com.projectkorra.projectkorra.util.DamageHandler;
 
 import org.bukkit.Location;
@@ -23,10 +24,14 @@ public class AirPunch extends AirAbility implements AddonAbility {
 
 	private Map<Location, Double> locations = new ConcurrentHashMap<>();
 
+	@Attribute(Attribute.COOLDOWN)
 	private long cooldown;
 	private long threshold;
+	@Attribute(Attribute.RANGE)
 	private double range;
+	@Attribute(Attribute.COOLDOWN)
 	private double damage;
+	@Attribute("CollisionRadius")
 	private double entityCollisionRadius;
 
 	private int shots;

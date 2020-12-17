@@ -9,6 +9,7 @@ import com.projectkorra.projectkorra.GeneralMethods;
 import com.projectkorra.projectkorra.ability.Ability;
 import com.projectkorra.projectkorra.ability.AddonAbility;
 import com.projectkorra.projectkorra.ability.WaterAbility;
+import com.projectkorra.projectkorra.attribute.Attribute;
 import com.projectkorra.projectkorra.util.DamageHandler;
 
 import org.bukkit.Location;
@@ -24,10 +25,15 @@ public class WaterBlast extends WaterAbility implements AddonAbility {
 	private Ability ability;
 	private double travelled;
 
+	@Attribute(Attribute.RANGE)
 	private double range;
+	@Attribute(Attribute.DAMAGE)
 	private double damage;
+	@Attribute(Attribute.SPEED)
 	private double speed;
+	@Attribute("CollisionRadius")
 	private double entityCollisionRadius;
+	@Attribute("CollisionRadius")
 	private double abilityCollisionRadius;
 
 	static {

@@ -6,6 +6,7 @@ import com.projectkorra.projectkorra.GeneralMethods;
 import com.projectkorra.projectkorra.ability.AddonAbility;
 import com.projectkorra.projectkorra.ability.ElementalAbility;
 import com.projectkorra.projectkorra.ability.MetalAbility;
+import com.projectkorra.projectkorra.attribute.Attribute;
 import com.projectkorra.projectkorra.command.Commands;
 import com.projectkorra.projectkorra.util.BlockSource;
 import com.projectkorra.projectkorra.util.ClickType;
@@ -27,8 +28,10 @@ import java.util.List;
 
 public class MetalShred extends MetalAbility implements AddonAbility {
 
+	@Attribute(Attribute.SELECT_RANGE)
 	private int selectRange;
 	private int extendTick;
+	@Attribute(Attribute.DAMAGE)
 	private double damage;
 
 	private boolean horizontal = false;

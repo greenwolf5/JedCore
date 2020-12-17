@@ -8,6 +8,7 @@ import com.jedk1.jedcore.configuration.JedCoreConfig;
 import com.projectkorra.projectkorra.GeneralMethods;
 import com.projectkorra.projectkorra.ability.AddonAbility;
 import com.projectkorra.projectkorra.ability.LightningAbility;
+import com.projectkorra.projectkorra.attribute.Attribute;
 import com.projectkorra.projectkorra.command.Commands;
 import com.projectkorra.projectkorra.util.DamageHandler;
 
@@ -33,10 +34,14 @@ public class Discharge extends LightningAbility implements AddonAbility {
 	private double branchSpace;
 	private Random rand = new Random();
 
+	@Attribute(Attribute.DAMAGE)
 	private double damage;
+	@Attribute(Attribute.COOLDOWN)
 	private long cooldown, avatarcooldown;
+	@Attribute(Attribute.DURATION)
 	private long duration;
 	private boolean slotSwapping;
+	@Attribute("CollisionRadius")
 	private double entityCollisionRadius;
 
 	public Discharge(Player player) {

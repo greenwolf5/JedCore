@@ -4,6 +4,7 @@ import com.jedk1.jedcore.JedCore;
 import com.jedk1.jedcore.configuration.JedCoreConfig;
 import com.projectkorra.projectkorra.ability.AddonAbility;
 import com.projectkorra.projectkorra.ability.EarthAbility;
+import com.projectkorra.projectkorra.attribute.Attribute;
 import com.projectkorra.projectkorra.earthbending.Collapse;
 import com.projectkorra.projectkorra.util.BlockSource;
 import com.projectkorra.projectkorra.util.ClickType;
@@ -28,7 +29,9 @@ public class EarthPillar extends EarthAbility implements AddonAbility {
 
 	private Block block;
 	private BlockFace face;
+	@Attribute(Attribute.HEIGHT)
 	private int height;
+	@Attribute(Attribute.RANGE)
 	private int range;
 	private int step;
 

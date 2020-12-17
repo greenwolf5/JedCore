@@ -6,6 +6,7 @@ import com.jedk1.jedcore.configuration.JedCoreConfig;
 import com.projectkorra.projectkorra.GeneralMethods;
 import com.projectkorra.projectkorra.ability.AddonAbility;
 import com.projectkorra.projectkorra.ability.LightningAbility;
+import com.projectkorra.projectkorra.attribute.Attribute;
 import com.projectkorra.projectkorra.util.DamageHandler;
 
 import org.bukkit.Location;
@@ -24,9 +25,13 @@ public class LightningBurst extends LightningAbility implements AddonAbility {
 	private static ConcurrentHashMap<Integer, Bolt> bolts = new ConcurrentHashMap<Integer, Bolt>();
 
 	Random rand = new Random();
+	@Attribute(Attribute.COOLDOWN)
 	private long cooldown, avatarcooldown;
+	@Attribute(Attribute.CHARGE_DURATION)
 	private long chargeup, avatarchargeup;
+	@Attribute(Attribute.DAMAGE)
 	private double damage;
+	@Attribute(Attribute.RADIUS)
 	private double radius;
 
 	private long time;

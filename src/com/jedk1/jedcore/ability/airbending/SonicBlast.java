@@ -8,6 +8,7 @@ import com.projectkorra.projectkorra.GeneralMethods;
 import com.projectkorra.projectkorra.ability.AddonAbility;
 import com.projectkorra.projectkorra.ability.AirAbility;
 import com.projectkorra.projectkorra.ability.CoreAbility;
+import com.projectkorra.projectkorra.attribute.Attribute;
 import com.projectkorra.projectkorra.util.DamageHandler;
 
 import org.bukkit.Location;
@@ -27,10 +28,15 @@ public class SonicBlast extends AirAbility implements AddonAbility {
 	private boolean isCharged;
 	private int travelled;
 
+	@Attribute(Attribute.DAMAGE)
 	private double damage;
+	@Attribute(Attribute.RANGE)
 	private double range;
+	@Attribute("CollisionRadius")
 	private double entityCollisionRadius;
+	@Attribute(Attribute.COOLDOWN)
 	private long cooldown;
+	@Attribute("WarmUp")
 	private long warmup;
 	private int nauseaDur;
 	private int blindDur;

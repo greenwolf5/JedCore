@@ -9,6 +9,7 @@ import com.jedk1.jedcore.collision.CollisionUtil;
 import com.jedk1.jedcore.configuration.JedCoreConfig;
 import com.jedk1.jedcore.util.BlockUtil;
 import com.projectkorra.projectkorra.ability.util.Collision;
+import com.projectkorra.projectkorra.attribute.Attribute;
 import com.projectkorra.projectkorra.earthbending.passive.DensityShift;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -30,13 +31,18 @@ import com.projectkorra.projectkorra.util.ParticleEffect;
 import com.projectkorra.projectkorra.util.TempBlock;
 
 public class EarthShard extends EarthAbility implements AddonAbility {
+	@Attribute(Attribute.RANGE)
 	public static int range;
 	public static int abilityRange;
 
+	@Attribute(Attribute.DAMAGE)
 	public static double normalDmg;
+	@Attribute(Attribute.DAMAGE)
 	public static double metalDmg;
 
+	@Attribute("MaxShots")
 	public static int maxShards;
+	@Attribute(Attribute.COOLDOWN)
 	public static long cooldown;
 
 	private boolean isThrown = false;

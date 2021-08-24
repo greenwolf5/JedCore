@@ -7,11 +7,15 @@ import java.util.concurrent.ConcurrentHashMap;
 import com.projectkorra.projectkorra.firebending.FireJet;
 import com.projectkorra.projectkorra.util.MovementHandler;
 import org.bukkit.Material;
+import org.bukkit.Sound;
+import org.bukkit.entity.Arrow;
+import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
+import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerToggleSneakEvent;
 
@@ -468,6 +472,16 @@ public class AbilityListener implements Listener {
 				if (abil.equalsIgnoreCase("spiritbeam")) {
 					new SpiritBeam(player);
 				}
+			}
+		}
+	}
+	@EventHandler
+	public void onArrowHit(EntityDamageByEntityEvent event) {
+		if (event.getDamager().getType() == EntityType.ARROW) {
+			Arrow arrow = (Arrow) event.getDamager();
+			if (arrow.getShooter() instanceof Player && arrow.hasMetadata("daggerthrow")){
+				Player player = (Player) arrow.getShooter();
+				player.playSound(player.getLocation(), Sound.ENTITY_ARROW_HIT_PLAYER, 1f, 1);
 			}
 		}
 	}

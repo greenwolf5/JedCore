@@ -35,22 +35,22 @@ public class FrostBreath extends IceAbility implements AddonAbility {
 			Material.LAVA,
 			Material.AIR,
 			Material.VOID_AIR,
-			Material.CAVE_AIR
+			Material.CAVE_AIR,
+			Material.LIGHT
 	);
 	private static final List<Biome> INVALID_BIOMES = Arrays.asList(
-			Biome.DESERT,
-			Biome.DESERT_HILLS,
-			Biome.BASALT_DELTAS,
-			Biome.CRIMSON_FOREST,
-			Biome.NETHER_WASTES,
-			Biome.SOUL_SAND_VALLEY,
-			Biome.WARPED_FOREST,
-			Biome.BADLANDS,
-			Biome.BADLANDS_PLATEAU,
-			Biome.ERODED_BADLANDS,
-			Biome.WOODED_BADLANDS_PLATEAU,
-			Biome.SAVANNA,
-			Biome.SAVANNA_PLATEAU
+		Biome.DESERT,
+		Biome.BASALT_DELTAS,
+		Biome.CRIMSON_FOREST,
+		Biome.NETHER_WASTES,
+		Biome.SOUL_SAND_VALLEY,
+		Biome.WARPED_FOREST,
+		Biome.BADLANDS,
+		Biome.WOODED_BADLANDS,
+		Biome.ERODED_BADLANDS,
+		Biome.SAVANNA,
+		Biome.SAVANNA_PLATEAU,
+		Biome.WINDSWEPT_SAVANNA
 	);
 
 	public Config config;
@@ -274,8 +274,8 @@ public class FrostBreath extends IceAbility implements AddonAbility {
 				}
 
 				ParticleEffect.SNOW_SHOVEL.display(loc, config.particles, Math.random(), Math.random(), Math.random(), size);
-				ParticleEffect.SPELL_MOB.display(getOffsetLocation(loc, offset), 0, 220, 220, 220, 0.003, new Particle.DustOptions(Color.fromRGB(220, 220, 220), 1));
-				ParticleEffect.SPELL_MOB.display(getOffsetLocation(loc, offset), 0, 150, 150, 255, 0.0035, new Particle.DustOptions(Color.fromRGB(150, 150, 255), 1));
+				ParticleEffect.SPELL_MOB.display(getOffsetLocation(loc, offset), 0, 220, 220, 220, 0.003/*, new Particle.DustOptions(Color.fromRGB(220, 220, 220), 1)*/);
+				ParticleEffect.SPELL_MOB.display(getOffsetLocation(loc, offset), 0, 150, 150, 255, 0.0035/*, new Particle.DustOptions(Color.fromRGB(150, 150, 255), 1)*/);
 			}
 		}
 

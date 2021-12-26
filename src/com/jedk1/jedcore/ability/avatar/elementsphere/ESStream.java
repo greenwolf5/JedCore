@@ -167,9 +167,9 @@ public class ESStream extends AvatarAbility implements AddonAbility {
 			}
 
 			ParticleEffect.FLAME.display(stream, 20, Math.random(), Math.random(), Math.random(), 0.5);
-			ParticleEffect.LARGE_SMOKE.display(stream, 20, Math.random(), Math.random(), Math.random(), 0.5);
+			ParticleEffect.SMOKE_LARGE.display(stream, 20, Math.random(), Math.random(), Math.random(), 0.5);
 			ParticleEffect.FIREWORKS_SPARK.display(stream, 20, Math.random(), Math.random(), Math.random(), 0.5);
-			ParticleEffect.LARGE_SMOKE.display(stream, 20, Math.random(), Math.random(), Math.random(), 0.5);
+			ParticleEffect.SMOKE_LARGE.display(stream, 20, Math.random(), Math.random(), Math.random(), 0.5);
 			ParticleEffect.EXPLOSION_HUGE.display(stream, 5, Math.random(), Math.random(), Math.random(), 0.5);
 
 			stream.getWorld().playSound(stream, (rand.nextBoolean()) ? Sound.ENTITY_FIREWORK_ROCKET_BLAST : Sound.ENTITY_FIREWORK_ROCKET_BLAST_FAR, 1f, 1f);
@@ -211,9 +211,9 @@ public class ESStream extends AvatarAbility implements AddonAbility {
 						break;
 					case 1:
 						if (rand.nextInt(30) == 0) {
-							ParticleEffect.MOB_SPELL.display(pl, 0, 255, 255, 255, 0.003);
+							ParticleEffect.SPELL_MOB.display(pl, 0, 255, 255, 255, 0.003);
 						} else {
-							ParticleEffect.MOB_SPELL_AMBIENT.display(pl, 1, 0.05, 0.05, 0.05, 0.005);
+							ParticleEffect.SPELL_MOB_AMBIENT.display(pl, 1, 0.05, 0.05, 0.05, 0.005);
 						}
 						break;
 					case 2:

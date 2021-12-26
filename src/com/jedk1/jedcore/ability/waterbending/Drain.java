@@ -35,17 +35,17 @@ public class Drain extends WaterAbility implements AddonAbility {
 	private List<Location> locations = new ArrayList<>();
 	private static final Biome[] INVALID_BIOMES = {
 			Biome.DESERT,
-			Biome.DESERT_HILLS,
 			Biome.BASALT_DELTAS,
 			Biome.CRIMSON_FOREST,
 			Biome.NETHER_WASTES,
 			Biome.SOUL_SAND_VALLEY,
 			Biome.WARPED_FOREST,
 			Biome.BADLANDS,
-			Biome.BADLANDS_PLATEAU,
+			Biome.WOODED_BADLANDS,
 			Biome.ERODED_BADLANDS,
 			Biome.SAVANNA,
-			Biome.SAVANNA_PLATEAU
+			Biome.SAVANNA_PLATEAU,
+			Biome.WINDSWEPT_SAVANNA
 	};
 
 	private long regenDelay;

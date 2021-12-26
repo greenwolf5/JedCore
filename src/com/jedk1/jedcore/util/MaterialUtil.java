@@ -16,7 +16,7 @@ public class MaterialUtil {
             Material.AZURE_BLUET, Material.RED_TULIP, Material.ORANGE_TULIP, Material.WHITE_TULIP, Material.PINK_TULIP,
             Material.OXEYE_DAISY, Material.BROWN_MUSHROOM, Material.RED_MUSHROOM, Material.TORCH, Material.FIRE,
             Material.WHEAT, Material.SNOW, Material.SUGAR_CANE, Material.VINE, Material.SUNFLOWER, Material.LILAC,
-            Material.LARGE_FERN, Material.ROSE_BUSH, Material.PEONY
+            Material.LARGE_FERN, Material.ROSE_BUSH, Material.PEONY, Material.LIGHT
     );
 
     private static List<Material> signMaterials = new ArrayList<>();

@@ -32,7 +32,10 @@ public class JCMethods {
 			Material.WHITE_TULIP, Material.ROSE_BUSH, Material.BLUE_ORCHID, Material.LILAC, Material.OXEYE_DAISY,
 			Material.AZURE_BLUET, Material.PEONY, Material.SUNFLOWER, Material.LARGE_FERN, Material.RED_MUSHROOM,
 			Material.BROWN_MUSHROOM, Material.PUMPKIN_STEM, Material.MELON_STEM, Material.WHEAT, Material.TALL_GRASS,
-			Material.BEETROOTS, Material.CARROTS, Material.POTATOES
+			Material.BEETROOTS, Material.CARROTS, Material.POTATOES, Material.AZALEA, Material.FLOWERING_AZALEA,
+			Material.FLOWERING_AZALEA_LEAVES, Material.AZALEA_LEAVES, Material.CRIMSON_FUNGUS, Material.WARPED_FUNGUS, 
+			Material.BIG_DRIPLEAF, Material.BIG_DRIPLEAF_STEM, Material.SMALL_DRIPLEAF, Material.HANGING_ROOTS,
+			Material.BAMBOO, Material.BAMBOO_SAPLING, Material.GLOW_LICHEN, Material.CAVE_VINES, Material.CAVE_VINES_PLANT
 	};
 	private static List<String> worlds = new ArrayList<String>();
 	private static List<String> combos = new ArrayList<String>();

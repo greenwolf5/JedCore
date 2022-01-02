@@ -407,7 +407,7 @@ public class WaterGimbal extends WaterAbility implements AddonAbility, ComboAbil
 	
 	@Override
 	public boolean isHiddenAbility() {
-		return true;
+		return false;
 	}
 
 	@Override

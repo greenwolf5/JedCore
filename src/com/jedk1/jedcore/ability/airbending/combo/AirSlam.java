@@ -102,7 +102,7 @@ public class AirSlam extends AirAbility implements AddonAbility, ComboAbility {
 	
 	@Override
 	public boolean isHiddenAbility() {
-		return true;
+		return false;
 	}
 
 	@Override

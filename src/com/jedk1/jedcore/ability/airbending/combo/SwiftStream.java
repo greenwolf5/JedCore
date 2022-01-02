@@ -119,7 +119,7 @@ public class SwiftStream extends FlightAbility implements AddonAbility, ComboAbi
 	
 	@Override
 	public boolean isHiddenAbility() {
-		return true;
+		return false;
 	}
 
 	@Override

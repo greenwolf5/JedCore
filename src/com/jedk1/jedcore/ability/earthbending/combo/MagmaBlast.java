@@ -413,7 +413,7 @@ public class MagmaBlast extends LavaAbility implements AddonAbility, ComboAbilit
 	
 	@Override
 	public boolean isHiddenAbility() {
-		return true;
+		return false;
 	}
 
 	@Override

@@ -164,7 +164,7 @@ public class WallRun extends ChiAbility implements AddonAbility {
 	
 	@Override
 	public boolean isHiddenAbility() {
-		return true;
+		return false;
 	}
 
 	@Override

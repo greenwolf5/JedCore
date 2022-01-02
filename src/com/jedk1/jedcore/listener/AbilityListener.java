@@ -184,7 +184,7 @@ public class AbilityListener implements Listener {
 			return;
 		} else if (bPlayer.canBendIgnoreCooldowns(coreAbil)) {
 
-			if (coreAbil instanceof AirAbility && bPlayer.isElementToggled(Element.AIR) == true) {
+			if (coreAbil instanceof AirAbility && bPlayer.isElementToggled(Element.AIR)) {
 				if (GeneralMethods.isWeapon(player.getInventory().getItemInMainHand().getType()) && !ProjectKorra.plugin.getConfig().getBoolean("Properties.Air.CanBendWithWeapons")) {
 					return;
 				}
@@ -196,7 +196,7 @@ public class AbilityListener implements Listener {
 				}
 			}
 			
-			if (coreAbil instanceof EarthAbility && bPlayer.isElementToggled(Element.EARTH) == true) {
+			if (coreAbil instanceof EarthAbility && bPlayer.isElementToggled(Element.EARTH)) {
 				if (GeneralMethods.isWeapon(player.getInventory().getItemInMainHand().getType()) && !ProjectKorra.plugin.getConfig().getBoolean("Properties.Earth.CanBendWithWeapons")) {
 					return;
 				}
@@ -241,7 +241,7 @@ public class AbilityListener implements Listener {
 				}
 			}
 
-			if (coreAbil instanceof FireAbility && bPlayer.isElementToggled(Element.FIRE) == true) {
+			if (coreAbil instanceof FireAbility && bPlayer.isElementToggled(Element.FIRE)) {
 				if (GeneralMethods.isWeapon(player.getInventory().getItemInMainHand().getType()) && !ProjectKorra.plugin.getConfig().getBoolean("Properties.Fire.CanBendWithWeapons")) {
 					return;
 				}
@@ -262,7 +262,7 @@ public class AbilityListener implements Listener {
 				}
 			}
 			
-			if (coreAbil instanceof WaterAbility && bPlayer.isElementToggled(Element.WATER) == true) {
+			if (coreAbil instanceof WaterAbility && bPlayer.isElementToggled(Element.WATER)) {
 				if (GeneralMethods.isWeapon(player.getInventory().getItemInMainHand().getType()) && !ProjectKorra.plugin.getConfig().getBoolean("Properties.WATER.CanBendWithWeapons")) {
 					return;
 				}
@@ -285,7 +285,7 @@ public class AbilityListener implements Listener {
 					WaterFlow.freeze(player);
 				}
 			}
-			if (coreAbil instanceof ChiAbility && bPlayer.isElementToggled(Element.CHI) == true) {
+			if (coreAbil instanceof ChiAbility && bPlayer.isElementToggled(Element.CHI)) {
 				if (GeneralMethods.isWeapon(player.getInventory().getItemInMainHand().getType()) && !ProjectKorra.plugin.getConfig().getBoolean("Properties.Chi.CanBendWithWeapons")) {
 					return;
 				}
@@ -322,9 +322,9 @@ public class AbilityListener implements Listener {
 
 		String abilName = bPlayer.getBoundAbilityName();
 		if (Suffocate.isBreathbent(player)) {
-			if (!abilName.equalsIgnoreCase("AirSwipe") 
-					|| !abilName.equalsIgnoreCase("FireBlast") 
-					|| !abilName.equalsIgnoreCase("EarthBlast") 
+			if (!abilName.equalsIgnoreCase("AirSwipe")
+					|| !abilName.equalsIgnoreCase("FireBlast")
+					|| !abilName.equalsIgnoreCase("EarthBlast")
 					|| !abilName.equalsIgnoreCase("WaterManipulation")) {
 				if(!player.isSneaking()) {
 					event.setCancelled(true);

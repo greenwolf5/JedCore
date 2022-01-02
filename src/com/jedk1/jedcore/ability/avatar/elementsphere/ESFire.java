@@ -2,6 +2,7 @@ package com.jedk1.jedcore.ability.avatar.elementsphere;
 
 import com.jedk1.jedcore.JedCore;
 import com.jedk1.jedcore.configuration.JedCoreConfig;
+import com.projectkorra.projectkorra.Element;
 import com.projectkorra.projectkorra.GeneralMethods;
 import com.projectkorra.projectkorra.Element.SubElement;
 import com.projectkorra.projectkorra.ability.AddonAbility;
@@ -118,11 +119,8 @@ public class ESFire extends AvatarAbility implements AddonAbility {
 				return;
 			}
 
-			if (bPlayer.hasSubElement(SubElement.BLUE_FIRE)) {
-				ParticleEffect.SOUL_FIRE_FLAME.display(location, 5, Math.random(), Math.random(), Math.random(), 0.02);
-			} else {
-				ParticleEffect.FLAME.display(location, 5, Math.random(), Math.random(), Math.random(), 0.02);
-			}
+			ParticleEffect flame = bPlayer.hasSubElement(Element.BLUE_FIRE) ? ParticleEffect.SOUL_FIRE_FLAME : ParticleEffect.FLAME;
+			flame.display(location, 5, Math.random(), Math.random(), Math.random(), 0.02);
 			ParticleEffect.SMOKE_LARGE.display(location, 2, Math.random(), Math.random(), Math.random(), 0.01);
 			FireAbility.playFirebendingSound(location);
 

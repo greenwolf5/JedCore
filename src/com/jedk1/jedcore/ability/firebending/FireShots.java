@@ -109,16 +109,16 @@ public class FireShots extends FireAbility implements AddonAbility {
 			this.damage = damage;
 		}
 		
-		public boolean progress(){
-			if(player.isDead() || !player.isOnline()){
+		public boolean progress() {
+			if (player.isDead() || !player.isOnline()) {
 				return false;
 			}
-			if(distanceTravelled >= range){
+			if (distanceTravelled >= range) {
 				return false;
 			}
-			for(int i = 0; i < 2; i++){
+			for (int i = 0; i < 2; i++) {
 				distanceTravelled ++;
-				if(distanceTravelled >= range)
+				if (distanceTravelled >= range)
 					return false;
 
 				Vector dir = direction;
@@ -128,7 +128,7 @@ public class FireShots extends FireAbility implements AddonAbility {
 
 				location = location.add(dir);
 
-				if(GeneralMethods.isSolid(location.getBlock()) || isWater(location.getBlock())){
+				if (GeneralMethods.isSolid(location.getBlock()) || isWater(location.getBlock())){
 					return false;
 				}
 				
@@ -157,11 +157,12 @@ public class FireShots extends FireAbility implements AddonAbility {
 	}
 
 	@Override
-	public void progress(){
-		if(player.isDead() || !player.isOnline()){
+	public void progress() {
+		if (player.isDead() || !player.isOnline()) {
 			remove();
 			return;
 		}
+
 		if (!bPlayer.canBendIgnoreCooldowns(this)) {
 			amount = 0;
 			if (!bPlayer.isOnCooldown(this)) {
@@ -203,16 +204,12 @@ public class FireShots extends FireAbility implements AddonAbility {
 		}
 	}
 
-	public Location getRightHandPos(){
+	public Location getRightHandPos() {
 		return GeneralMethods.getRightSide(player.getLocation(), .55).add(0, 1.2, 0);
 	}
 
-	private void displayFireBalls(){
-		if (bPlayer.canUseSubElement(SubElement.BLUE_FIRE)) {
-			ParticleEffect.SOUL_FIRE_FLAME.display(getRightHandPos().toVector().add(player.getEyeLocation().getDirection().clone().multiply(.8D)).toLocation(player.getWorld()), 3, 0, 0, 0, 0.01);
-		} else {
-			ParticleEffect.FLAME.display(getRightHandPos().toVector().add(player.getEyeLocation().getDirection().clone().multiply(.8D)).toLocation(player.getWorld()), 3, 0, 0, 0, 0.01);
-		}
+	private void displayFireBalls() {
+		playFirebendingParticles(getRightHandPos().toVector().add(player.getEyeLocation().getDirection().clone().multiply(.8D)).toLocation(player.getWorld()), 3, 0, 0, 0);
 		ParticleEffect.SMOKE_NORMAL.display(getRightHandPos().toVector().add(player.getEyeLocation().getDirection().clone().multiply(.8D)).toLocation(player.getWorld()), 3, 0, 0, 0, 0.01);
 	}
 	

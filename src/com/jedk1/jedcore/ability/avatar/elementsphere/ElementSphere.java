@@ -4,7 +4,6 @@ import com.jedk1.jedcore.JedCore;
 import com.jedk1.jedcore.configuration.JedCoreConfig;
 import com.projectkorra.projectkorra.Element;
 import com.projectkorra.projectkorra.GeneralMethods;
-import com.projectkorra.projectkorra.Element.SubElement;
 import com.projectkorra.projectkorra.ability.AddonAbility;
 import com.projectkorra.projectkorra.ability.AvatarAbility;
 import com.projectkorra.projectkorra.ability.MultiAbility;
@@ -256,11 +255,8 @@ public class ElementSphere extends AvatarAbility implements AddonAbility, MultiA
 				double z = 2 * Math.sin(angle + point);
 				Location loc = location.clone();
 				loc.add(x, 2, z);
-				if (bPlayer.hasSubElement(SubElement.BLUE_FIRE)) {
-					ParticleEffect.SOUL_FIRE_FLAME.display(loc, 0, 0, 0, 0, 1);
-				} else {
-					ParticleEffect.FLAME.display(loc, 0, 0, 0, 0, 1);
-				}
+				ParticleEffect flame = bPlayer.hasSubElement(Element.BLUE_FIRE) ? ParticleEffect.SOUL_FIRE_FLAME : ParticleEffect.FLAME;
+				flame.display(loc, 0, 0, 0, 0, 1);
 			}
 
 		point++;
@@ -396,14 +392,10 @@ public class ElementSphere extends AvatarAbility implements AddonAbility, MultiA
 	}
 
 	@Override
-	public void load() {
-		return;
-	}
+	public void load() {}
 
 	@Override
-	public void stop() {
-		return;
-	}
+	public void stop() {}
 
 	@Override
 	public boolean isEnabled() {
@@ -413,7 +405,7 @@ public class ElementSphere extends AvatarAbility implements AddonAbility, MultiA
 
 	@Override
 	public ArrayList<MultiAbilityInfoSub> getMultiAbilities() {
-		ArrayList<MultiAbilityInfoSub> elementsphere = new ArrayList<MultiAbilityInfoSub>();
+		ArrayList<MultiAbilityInfoSub> elementsphere = new ArrayList<>();
 		elementsphere.add(new MultiAbilityInfoSub("Air", Element.AIR));
 		elementsphere.add(new MultiAbilityInfoSub("Earth", Element.EARTH));
 		elementsphere.add(new MultiAbilityInfoSub("Fire", Element.FIRE));

@@ -128,11 +128,7 @@ public class FireBall extends FireAbility implements AddonAbility {
 			ParticleEffect.SMOKE_LARGE.display(location, 1, 0, 0, 0, 0);
 			ParticleEffect.SMOKE_LARGE.display(location, 1, 0, 0, 0, 0);
 			for (int j = 0; j < 5; j++) {
-				if (bPlayer.canUseSubElement(SubElement.BLUE_FIRE)) {
-					ParticleEffect.SOUL_FIRE_FLAME.display(location, 1, 0, 0, 0, 0);
-				} else {
-					ParticleEffect.FLAME.display(location, 1, 0, 0, 0, 0);
-				}
+				playFirebendingParticles(location, 1, 0, 0, 0);
 			}
 
 			boolean hitTarget = CollisionDetector.checkEntityCollisions(player, new Sphere(location.toVector(), collisionRadius), this::doDamage);

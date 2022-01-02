@@ -230,11 +230,7 @@ public class FireBreath extends FireAbility implements AddonAbility {
 				}
 
 			} else {
-				if (bPlayer.canUseSubElement(SubElement.BLUE_FIRE)) {
-					ParticleEffect.SOUL_FIRE_FLAME.display(loc, particles, Math.random(), Math.random(), Math.random(), size);
-				} else {
-					ParticleEffect.FLAME.display(loc, particles, Math.random(), Math.random(), Math.random(), size);
-				}
+				playFirebendingParticles(loc, particles, Math.random(), Math.random(), Math.random());
 				ParticleEffect.SMOKE_NORMAL.display(loc, particles, Math.random(), Math.random(), Math.random(), size);
 			}
 		}

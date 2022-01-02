@@ -16,7 +16,7 @@ import org.bukkit.util.Vector;
 
 import com.jedk1.jedcore.JedCore;
 import com.projectkorra.projectkorra.BendingPlayer;
-import com.projectkorra.projectkorra.Element.SubElement;
+import com.projectkorra.projectkorra.Element;
 import com.projectkorra.projectkorra.GeneralMethods;
 import com.projectkorra.projectkorra.ability.AddonAbility;
 import com.projectkorra.projectkorra.ability.FireAbility;
@@ -51,11 +51,8 @@ public class FirePunch extends FireAbility implements AddonAbility {
 		Vector dir = player.getEyeLocation().getDirection();
 		Location righthand = offset.toVector().add(dir.clone().multiply(.8D)).toLocation(player.getWorld());
 		BendingPlayer bPlayer = BendingPlayer.getBendingPlayer(player);
-		if (bPlayer.canUseSubElement(SubElement.BLUE_FIRE)) {
-			ParticleEffect.SOUL_FIRE_FLAME.display(righthand, 3, 0, 0, 0, 0);
-		} else {
-			ParticleEffect.FLAME.display(righthand, 3, 0, 0, 0, 0);
-		}
+		ParticleEffect flame = bPlayer.hasSubElement(Element.BLUE_FIRE) ? ParticleEffect.SOUL_FIRE_FLAME : ParticleEffect.FLAME;
+		flame.display(righthand, 3, 0, 0, 0, 0);
 		ParticleEffect.SMOKE_NORMAL.display(righthand, 3, 0, 0, 0, 0);
 	}
 

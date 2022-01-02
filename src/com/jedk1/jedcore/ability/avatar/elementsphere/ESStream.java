@@ -5,6 +5,7 @@ import com.jedk1.jedcore.JedCore;
 import com.jedk1.jedcore.configuration.JedCoreConfig;
 import com.jedk1.jedcore.util.RegenTempBlock;
 import com.jedk1.jedcore.util.TempFallingBlock;
+import com.projectkorra.projectkorra.Element;
 import com.projectkorra.projectkorra.GeneralMethods;
 import com.projectkorra.projectkorra.ability.AddonAbility;
 import com.projectkorra.projectkorra.ability.AvatarAbility;
@@ -157,7 +158,7 @@ public class ESStream extends AvatarAbility implements AddonAbility {
 				if (e instanceof Player && ((Player) e) == player) {
 					continue;
 				}
-				if(GeneralMethods.isRegionProtectedFromBuild(this, e.getLocation()) || ((e instanceof Player) && Commands.invincible.contains(((Player) e).getName()))){
+				if (GeneralMethods.isRegionProtectedFromBuild(this, e.getLocation()) || ((e instanceof Player) && Commands.invincible.contains(((Player) e).getName()))){
 					continue;
 				}
 				e.setVelocity(dir.normalize().multiply(knockback));
@@ -207,7 +208,8 @@ public class ESStream extends AvatarAbility implements AddonAbility {
 				Location pl = l.clone().add(ov.clone());
 				switch (i) {
 					case 0:
-						ParticleEffect.FLAME.display(pl, 1, 0.05F, 0.05F, 0.05F, 0.005F);
+						ParticleEffect flame = bPlayer.hasSubElement(Element.BLUE_FIRE) ? ParticleEffect.SOUL_FIRE_FLAME : ParticleEffect.FLAME;
+						flame.display(pl, 1, 0.05F, 0.05F, 0.05F, 0.005F);
 						break;
 					case 1:
 						if (rand.nextInt(30) == 0) {

@@ -209,11 +209,7 @@ public class FireComet extends FireAbility implements AddonAbility {
 			}
 		}
 
-		if (bPlayer.canUseSubElement(SubElement.BLUE_FIRE)) {
-			ParticleEffect.SOUL_FIRE_FLAME.display(location, 20, Math.random(), Math.random(), Math.random(), 0.5);
-		} else {
-			ParticleEffect.FLAME.display(location, 20, Math.random(), Math.random(), Math.random(), 0.5);
-		}
+		playFirebendingParticles(location, 20, Math.random(), Math.random(), Math.random());
 		ParticleEffect.FIREWORKS_SPARK.display(location, 20,  Math.random(), Math.random(), Math.random(), 0.5);
 
 		location.getWorld().playSound(location, (rand.nextBoolean()) ? Sound.ENTITY_FIREWORK_ROCKET_BLAST : Sound.ENTITY_FIREWORK_ROCKET_BLAST_FAR, 5f, 1f);

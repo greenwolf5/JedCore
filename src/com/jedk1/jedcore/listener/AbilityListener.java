@@ -89,7 +89,6 @@ public class AbilityListener implements Listener {
 		this.plugin = plugin;
 	}
 
-
 	@EventHandler(priority = EventPriority.LOWEST)
 	// Abilities that should bypass punch cancels should be handled here.
 	public void onPlayerSwingBypassCancel(PlayerInteractEvent event) {
@@ -475,6 +474,7 @@ public class AbilityListener implements Listener {
 			}
 		}
 	}
+
 	@EventHandler
 	public void onArrowHit(EntityDamageByEntityEvent event) {
 		if (event.getDamager().getType() == EntityType.ARROW) {

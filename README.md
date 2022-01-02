@@ -1,8 +1,19 @@
 # JedCore
 This is my fork of plushmonkey's fork of jedk1's JedCore addon for ProjectKorra.  
-Download releases [here](https://github.com/Aztlon/JedCore/releases).  
+Download releases [here](https://github.com/Aztlon/JedCore/releases).
+Join our [Discord](https://discord.gg/gh9MfDmwZm) to discuss the plugin, suggest changes, report bugs, etc.
 
 ## Changelog
+
+### 2.9.6
+- Added blue fire to ElementSphere Stream
+- Added Attribute annotations
+- Added hit indicator sounds to DaggerThrow
+- Added new biomes to FrostBreath and Bloodbending
+- Added new plants and blocks to the necessary lists
+- Fixed deprecated particle names
+- Fixed a jukebox dupe bug
+- Improved blue fire particle logic
 
 ### 2.9.5
 - Added modifiers for blue fire, day factor, and night factor where applicable

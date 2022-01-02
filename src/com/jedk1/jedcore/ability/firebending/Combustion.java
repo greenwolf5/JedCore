@@ -235,11 +235,7 @@ public class Combustion extends CombustionAbility implements AddonAbility {
 				double z = size * Math.sin(angle);
 
 				Location loc = player.getLocation().add(x, 1.0D, z);
-				if (bPlayer.canUseSubElement(SubElement.BLUE_FIRE)) {
-					ParticleEffect.SOUL_FIRE_FLAME.display(loc, 3, 0.0, 0.0, 0.0, 0.01);
-				} else {
-					ParticleEffect.FLAME.display(loc, 3, 0.0, 0.0, 0.0, 0.01);
-				}
+				playFirebendingParticles(loc, 3, 0.0, 0.0, 0.0);
 				ParticleEffect.SMOKE_NORMAL.display(loc, 4, 0.0, 0.0, 0.0, 0.01);
 			}
 		}
